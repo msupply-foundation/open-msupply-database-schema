@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>vaccination_course - omsupply-database.public</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>omsupply-database</b></a><span class="navbar-brand" style="padding-left: 0">.public</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>vaccination_course</h1><p><span id="recordNumber">0</span> rows</p><br />
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><span id="id">id</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="vaccine_course_name">vaccine_course_name</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="coverage_rate">coverage_rate</span></td>
+                                    <td>float8</td>
+                                    <td>17,17</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="wastage_rate">wastage_rate</span></td>
+                                    <td>float8</td>
+                                    <td>17,17</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="vaccine_course_dose_id">vaccine_course_dose_id</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="dose_label">dose_label</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="min_interval_days">min_interval_days</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="min_age">min_age</span></td>
+                                    <td>float8</td>
+                                    <td>17,17</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="max_age">max_age</span></td>
+                                    <td>float8</td>
+                                    <td>17,17</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="custom_age_label">custom_age_label</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="vaccine_course_item_id">vaccine_course_item_id</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="item_id">item_id</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="item_link_id">item_link_id</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="item_name">item_name</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="item_code">item_code</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="item_type">item_type</span></td>
+                                    <td>item_type</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="default_pack_size">default_pack_size</span></td>
+                                    <td>float8</td>
+                                    <td>17,17</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="is_vaccine_item">is_vaccine_item</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="vaccine_doses">vaccine_doses</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="unit_id">unit_id</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="unit">unit</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="unit_index">unit_index</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="demographic_id">demographic_id</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="demographic_name">demographic_name</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="population_percentage">population_percentage</span></td>
+                                    <td>float8</td>
+                                    <td>17,17</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="program_id">program_id</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="program_name">program_name</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="vaccination_course.html" target="_top" title="vaccination_course" alt="" coords="5,5,473,843">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/vaccination_course.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-file-code-o"></i>
+                            <h3 id="ViewDefinition" class="box-title">View Definition</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <textarea id="sql-script-codemirror" name="sql-script-codemirror" rows="" style="display: none;">SELECT vc.id,&#10;    vc.name AS vaccine_course_name,&#10;    vc.coverage_rate,&#10;    vc.wastage_rate,&#10;    vcd.id AS vaccine_course_dose_id,&#10;    vcd.label AS dose_label,&#10;    vcd.min_interval_days,&#10;    vcd.min_age,&#10;    vcd.max_age,&#10;    vcd.custom_age_label,&#10;    vci.id AS vaccine_course_item_id,&#10;    item.id AS item_id,&#10;    il.id AS item_link_id,&#10;    item.name AS item_name,&#10;    item.code AS item_code,&#10;    item.type AS item_type,&#10;    item.default_pack_size,&#10;    item.is_vaccine AS is_vaccine_item,&#10;    item.vaccine_doses,&#10;    item.unit_id,&#10;    unit.name AS unit,&#10;    unit.index AS unit_index,&#10;    d.id AS demographic_id,&#10;    d.name AS demographic_name,&#10;    d.population_percentage,&#10;    p.id AS program_id,&#10;    p.name AS program_name&#10;   FROM (((((((vaccine_course vc&#10;     JOIN vaccine_course_dose vcd ON ((vc.id &#61; vcd.vaccine_course_id)))&#10;     JOIN vaccine_course_item vci ON ((vci.vaccine_course_id &#61; vc.id)))&#10;     JOIN item_link il ON ((vci.item_link_id &#61; il.id)))&#10;     JOIN item ON ((item.id &#61; il.item_id)))&#10;     LEFT JOIN unit ON ((item.unit_id &#61; unit.id)))&#10;     LEFT JOIN demographic d ON ((d.id &#61; vc.demographic_id)))&#10;     JOIN program p ON ((p.id &#61; vc.program_id)))&#10;  WHERE ((vc.deleted_datetime IS NULL) AND (vcd.deleted_datetime IS NULL) AND (vci.deleted_datetime IS NULL));</textarea>
+                            <div style="padding-top: 5px;"><hr></div>
+                            <div class="box box-solid">
+                                <div class="box-header with-border">
+                                    <i class="fa fa-puzzle-piece"></i>
+                                    <h3 class="box-title">Possibly Referenced Tables/Views</h3>
+                                </div>
+                                <!-- /.box-header -->
+                                <div class="box-body">
+                                    <ul class="list-unstyled">
+                                        <li><a href="item.html">item</a></li>
+                                        <li><a href="unit.html">unit</a></li>
+                                        <li><a href="vaccine_course.html">vaccine_course</a></li>
+                                        <li><a href="vaccine_course_dose.html">vaccine_course_dose</a></li>
+                                        <li><a href="vaccine_course_item.html">vaccine_course_item</a></li>
+                                        <li><a href="item_link.html">item_link</a></li>
+                                        <li><a href="demographic.html">demographic</a></li>
+                                    </ul>
+                                </div><!-- /.box-body -->
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 7.0.2</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>

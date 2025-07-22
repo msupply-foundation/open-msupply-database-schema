@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>invoice_line - omsupply-database.public</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>omsupply-database</b></a><span class="navbar-brand" style="padding-left: 0">.public</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>invoice_line</h1><p><span id="recordNumber">-1</span> rows</p><br />
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id">id</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="vvm_status_log.invoice_line_id references invoice_line.id via vvm_status_log_invoice_line_id_fkey"><a href='vvm_status_log.html'>vvm_status_log</a><span class='relatedKey'>.invoice_line_id</span></td>
+                                                <td class="constraint detail">vvm_status_log_invoice_line_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="invoice_id">invoice_id</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="invoice_line.invoice_id references invoice.id via invoice_line_invoice_id_fkey"><a href='invoice.html'>invoice</a><span class='relatedKey'>.id</span></td>
+                                                <td class="constraint detail">invoice_line_invoice_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="item_name">item_name</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="item_code">item_code</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="stock_line_id">stock_line_id</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="invoice_line.stock_line_id references stock_line.id via invoice_line_stock_line_id_fkey"><a href='stock_line.html'>stock_line</a><span class='relatedKey'>.id</span></td>
+                                                <td class="constraint detail">invoice_line_stock_line_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="location_id">location_id</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="invoice_line.location_id references location.id via invoice_line_location_id_fkey"><a href='location.html'>location</a><span class='relatedKey'>.id</span></td>
+                                                <td class="constraint detail">invoice_line_location_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="batch">batch</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="expiry_date">expiry_date</span></td>
+                                    <td>date</td>
+                                    <td>13</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="cost_price_per_pack">cost_price_per_pack</span></td>
+                                    <td>float8</td>
+                                    <td>17,17</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="sell_price_per_pack">sell_price_per_pack</span></td>
+                                    <td>float8</td>
+                                    <td>17,17</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="total_before_tax">total_before_tax</span></td>
+                                    <td>float8</td>
+                                    <td>17,17</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="total_after_tax">total_after_tax</span></td>
+                                    <td>float8</td>
+                                    <td>17,17</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="tax_percentage">tax_percentage</span></td>
+                                    <td>float8</td>
+                                    <td>17,17</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="type">type</span></td>
+                                    <td>invoice_line_type</td>
+                                    <td>2147483647</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="number_of_packs">number_of_packs</span></td>
+                                    <td>float8</td>
+                                    <td>17,17</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="pack_size">pack_size</span></td>
+                                    <td>float8</td>
+                                    <td>17,17</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="note">note</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="foreign_currency_price_before_tax">foreign_currency_price_before_tax</span></td>
+                                    <td>float8</td>
+                                    <td>17,17</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="item_link_id">item_link_id</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>&#39;temp_for_migration&#39;::text</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="invoice_line.item_link_id references item_link.id via invoice_line_item_link_id_fkey"><a href='item_link.html'>item_link</a><span class='relatedKey'>.id</span></td>
+                                                <td class="constraint detail">invoice_line_item_link_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="item_variant_id">item_variant_id</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="invoice_line.item_variant_id references item_variant.id via invoice_line_item_variant_id_fkey"><a href='item_variant.html'>item_variant</a><span class='relatedKey'>.id</span></td>
+                                                <td class="constraint detail">invoice_line_item_variant_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="prescribed_quantity">prescribed_quantity</span></td>
+                                    <td>float8</td>
+                                    <td>17,17</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="linked_invoice_id">linked_invoice_id</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="reason_option_id">reason_option_id</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="invoice_line.reason_option_id references reason_option.id via invoice_line_reason_option_id_fkey"><a href='reason_option.html'>reason_option</a><span class='relatedKey'>.id</span></td>
+                                                <td class="constraint detail">invoice_line_reason_option_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="vvm_status_id">vvm_status_id</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="invoice_line.vvm_status_id references vvm_status.id via invoice_line_vvm_status_id_fkey"><a href='vvm_status.html'>vvm_status</a><span class='relatedKey'>.id</span></td>
+                                                <td class="constraint detail">invoice_line_vvm_status_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="donor_link_id">donor_link_id</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="invoice_line.donor_link_id references name_link.id via invoice_line_donor_link_id_fkey"><a href='name_link.html'>name_link</a><span class='relatedKey'>.id</span></td>
+                                                <td class="constraint detail">invoice_line_donor_link_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="campaign_id">campaign_id</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="invoice_line.campaign_id references campaign.id via invoice_line_campaign_id_fkey"><a href='campaign.html'>campaign</a><span class='relatedKey'>.id</span></td>
+                                                <td class="constraint detail">invoice_line_campaign_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="shipped_number_of_packs">shipped_number_of_packs</span></td>
+                                    <td>float8</td>
+                                    <td>17,17</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 id="Indexes" class="box-title">Indexes</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="indexes_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Type</th>
+                                    <th>Sort</th>
+                                    <th>Column(s)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> invoice_line_pkey</td>
+                                    <td>Primary key</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>id</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>index_invoice_line_invoice_id_fkey</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>invoice_id</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>index_invoice_line_item_link_id_fkey</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>item_link_id</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>index_invoice_line_location_id_fkey</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>location_id</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>index_invoice_line_number_of_packs</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>number_of_packs</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>index_invoice_line_stock_line_id_fkey</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>stock_line_id</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>index_invoice_line_type</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>type</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="invoice.html" target="_top" title="invoice" alt="" coords="528,5,884,563">
+<area shape="rect" id="node2" href="name_link.html" target="_top" title="name_link" alt="" coords="5,768,187,891">
+<area shape="rect" id="node3" href="invoice_line.html" target="_top" title="invoice_line" alt="" coords="928,536,1552,1397">
+<area shape="rect" id="node4" href="campaign.html" target="_top" title="campaign" alt="" coords="247,1333,467,1451">
+<area shape="rect" id="node5" href="item_link.html" target="_top" title="item_link" alt="" coords="10,927,182,1049">
+<area shape="rect" id="node6" href="item_variant.html" target="_top" title="item_variant" alt="" coords="231,897,484,1103">
+<area shape="rect" id="node7" href="location.html" target="_top" title="location" alt="" coords="231,568,483,744">
+<area shape="rect" id="node8" href="reason_option.html" target="_top" title="reason_option" alt="" coords="595,1175,817,1292">
+<area shape="rect" id="node9" href="stock_line.html" target="_top" title="stock_line" alt="" coords="549,616,863,1085">
+<area shape="rect" id="node10" href="vvm_status.html" target="_top" title="vvm_status" alt="" coords="261,1120,454,1237">
+<area shape="rect" id="node11" href="vvm_status_log.html" target="_top" title="vvm_status_log" alt="" coords="1596,456,1829,661">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/invoice_line.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="asset.html" target="_top" title="asset" alt="" coords="1042,380,1178,468">
+<area shape="rect" id="node2" href="name_link.html" target="_top" title="name_link" alt="" coords="400,1177,581,1265">
+<area shape="rect" id="node3" href="store.html" target="_top" title="store" alt="" coords="707,595,842,683">
+<area shape="rect" id="node33" href="name.html" target="_top" title="name" alt="" coords="219,1176,356,1264">
+<area shape="rect" id="node4" href="asset_internal_location.html" target="_top" title="asset_internal_location" alt="" coords="1296,367,1604,455">
+<area shape="rect" id="node5" href="location.html" target="_top" title="location" alt="" coords="1029,241,1191,329">
+<area shape="rect" id="node28" href="cold_storage_type.html" target="_top" title="cold_storage_type" alt="" coords="645,207,905,295">
+<area shape="rect" id="node6" href="barcode.html" target="_top" title="barcode" alt="" coords="693,1809,856,1897">
+<area shape="rect" id="node7" href="item.html" target="_top" title="item" alt="" coords="427,1861,555,1949">
+<area shape="rect" id="node8" href="bundled_item.html" target="_top" title="bundled_item" alt="" coords="1342,577,1558,665">
+<area shape="rect" id="node9" href="item_variant.html" target="_top" title="item_variant" alt="" coords="1007,512,1213,600">
+<area shape="rect" id="node23" href="item_link.html" target="_top" title="item_link" alt="" coords="689,1915,861,2003">
+<area shape="rect" id="node10" href="changelog.html" target="_top" title="changelog" alt="" coords="683,1228,867,1316">
+<area shape="rect" id="node11" href="contact_trace.html" target="_top" title="contact_trace" alt="" coords="1002,1271,1218,1359">
+<area shape="rect" id="node12" href="document.html" target="_top" title="document" alt="" coords="684,1475,865,1563">
+<area shape="rect" id="node13" href="program.html" target="_top" title="program" alt="" coords="691,1369,858,1457">
+<area shape="rect" id="node14" href="encounter.html" target="_top" title="encounter" alt="" coords="1019,1376,1201,1464">
+<area shape="rect" id="node15" href="indicator_value.html" target="_top" title="indicator_value" alt="" coords="994,761,1226,849">
+<area shape="rect" id="node16" href="invoice.html" target="_top" title="invoice" alt="" coords="1033,972,1187,1060">
+<area shape="rect" id="node17" href="clinician_link.html" target="_top" title="clinician_link" alt="" coords="671,1035,879,1123">
+<area shape="rect" id="node18" href="currency.html" target="_top" title="currency" alt="" coords="5,1140,175,1228">
+<area shape="rect" id="node19" href="diagnosis.html" target="_top" title="diagnosis" alt="" coords="687,929,863,1017">
+<area shape="rect" id="node20" href="name_insurance_join.html" target="_top" title="name_insurance_join" alt="" coords="631,824,918,912">
+<area shape="rect" id="node21" href="invoice_line.html" target="_top" title="invoice_line" alt="" coords="1648,977,2272,1839">
+<area shape="rect" id="node22" href="campaign.html" target="_top" title="campaign" alt="" coords="1021,1695,1199,1783">
+<area shape="rect" id="node24" href="reason_option.html" target="_top" title="reason_option" alt="" coords="999,2188,1221,2305">
+<area shape="rect" id="node25" href="stock_line.html" target="_top" title="stock_line" alt="" coords="1360,1051,1540,1139">
+<area shape="rect" id="node26" href="vvm_status.html" target="_top" title="vvm_status" alt="" coords="1013,1553,1207,1641">
+<area shape="rect" id="node27" href="item_direction.html" target="_top" title="item_direction" alt="" coords="998,1977,1222,2065">
+<area shape="rect" id="node29" href="item_warning_join.html" target="_top" title="item_warning_join" alt="" coords="980,2083,1240,2171">
+<area shape="rect" id="node30" href="location_movement.html" target="_top" title="location_movement" alt="" coords="1823,221,2097,309">
+<area shape="rect" id="node31" href="master_list_line.html" target="_top" title="master_list_line" alt="" coords="992,2359,1228,2447">
+<area shape="rect" id="node32" href="master_list_name_join.html" target="_top" title="master_list_name_join" alt="" coords="625,1632,924,1720">
+<area shape="rect" id="node34" href="name_store_join.html" target="_top" title="name_store_join" alt="" coords="989,867,1231,955">
+<area shape="rect" id="node35" href="name_tag_join.html" target="_top" title="name_tag_join" alt="" coords="663,312,886,400">
+<area shape="rect" id="node36" href="packaging_variant.html" target="_top" title="packaging_variant" alt="" coords="1319,472,1581,560">
+<area shape="rect" id="node37" href="program_enrolment.html" target="_top" title="program_enrolment" alt="" coords="972,1129,1248,1217">
+<area shape="rect" id="node38" href="program_event.html" target="_top" title="program_event" alt="" coords="659,453,890,541">
+<area shape="rect" id="node39" href="requisition.html" target="_top" title="requisition" alt="" coords="1015,2569,1205,2657">
+<area shape="rect" id="node40" href="requisition_line.html" target="_top" title="requisition_line" alt="" coords="1333,2285,1567,2373">
+<area shape="rect" id="node41" href="rnr_form.html" target="_top" title="rnr_form" alt="" coords="1026,1800,1194,1888">
+<area shape="rect" id="node42" href="rnr_form_line.html" target="_top" title="rnr_form_line" alt="" coords="1344,1800,1556,1888">
+<area shape="rect" id="node43" href="sensor.html" target="_top" title="sensor" alt="" coords="1376,81,1524,169">
+<area shape="rect" id="node44" href="stocktake.html" target="_top" title="stocktake" alt="" coords="1361,909,1539,997">
+<area shape="rect" id="node45" href="stocktake_line.html" target="_top" title="stocktake_line" alt="" coords="1848,836,2072,924">
+<area shape="rect" id="node46" href="temperature_breach.html" target="_top" title="temperature_breach" alt="" coords="1819,99,2101,187">
+<area shape="rect" id="node47" href="temperature_log.html" target="_top" title="temperature_log" alt="" coords="2316,63,2561,151">
+<area shape="rect" id="node48" href="vaccine_course_item.html" target="_top" title="vaccine_course_item" alt="" coords="968,2464,1252,2552">
+<area shape="rect" id="node49" href="vvm_status_log.html" target="_top" title="vvm_status_log" alt="" coords="2322,907,2555,995">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/invoice_line.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 7.0.2</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>
