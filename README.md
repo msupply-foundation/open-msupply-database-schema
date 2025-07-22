@@ -10,3 +10,4 @@ Then using schemaspy docker create schema: `docker run -v "$PWD/docs/2.9.0:/outp
 
 After committing generate schema to main you should see it on: `https://msupply-foundation.github.io/open-msupply-database-schema/2.9.0`
 
+See this issue for more detail: https://github.com/msupply-foundation/open-msupply/issues/8579
