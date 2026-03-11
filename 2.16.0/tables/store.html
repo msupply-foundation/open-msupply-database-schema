@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>store - omsupply-database.public</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>omsupply-database</b></a><span class="navbar-brand" style="padding-left: 0">.public</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>store</h1><br />
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id">id</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="activity_log.store_id references store.id via activity_log_store_id_fkey"><a href='activity_log.html'>activity_log</a><span class='relatedKey'>.store_id</span></td>
+                                                <td class="constraint detail">activity_log_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="asset.store_id references store.id via asset_store_id_fkey"><a href='asset.html'>asset</a><span class='relatedKey'>.store_id</span></td>
+                                                <td class="constraint detail">asset_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="clinician.store_id references store.id via clinician_store_id_fkey"><a href='clinician.html'>clinician</a><span class='relatedKey'>.store_id</span></td>
+                                                <td class="constraint detail">clinician_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="clinician_store_join.store_id references store.id via clinician_store_join_store_id_fkey"><a href='clinician_store_join.html'>clinician_store_join</a><span class='relatedKey'>.store_id</span></td>
+                                                <td class="constraint detail">clinician_store_join_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="contact_form.store_id references store.id via contact_form_store_id_fkey"><a href='contact_form.html'>contact_form</a><span class='relatedKey'>.store_id</span></td>
+                                                <td class="constraint detail">contact_form_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="contact_trace.store_id references store.id via contact_trace_store_id_fkey"><a href='contact_trace.html'>contact_trace</a><span class='relatedKey'>.store_id</span></td>
+                                                <td class="constraint detail">contact_trace_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="indicator_value.store_id references store.id via indicator_value_store_id_fkey"><a href='indicator_value.html'>indicator_value</a><span class='relatedKey'>.store_id</span></td>
+                                                <td class="constraint detail">indicator_value_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="invoice.name_store_id references store.id via invoice_name_store_id_fkey"><a href='invoice.html'>invoice</a><span class='relatedKey'>.name_store_id</span></td>
+                                                <td class="constraint detail">invoice_name_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="invoice.store_id references store.id via invoice_store_id_fkey"><a href='invoice.html'>invoice</a><span class='relatedKey'>.store_id</span></td>
+                                                <td class="constraint detail">invoice_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="item_store_join.store_id references store.id via item_store_join_store_id_fkey"><a href='item_store_join.html'>item_store_join</a><span class='relatedKey'>.store_id</span></td>
+                                                <td class="constraint detail">item_store_join_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="location.store_id references store.id via location_store_id_fkey"><a href='location.html'>location</a><span class='relatedKey'>.store_id</span></td>
+                                                <td class="constraint detail">location_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="location_movement.store_id references store.id via location_movement_store_id_fkey"><a href='location_movement.html'>location_movement</a><span class='relatedKey'>.store_id</span></td>
+                                                <td class="constraint detail">location_movement_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="name_store_join.store_id references store.id via name_store_join_store_id_fkey"><a href='name_store_join.html'>name_store_join</a><span class='relatedKey'>.store_id</span></td>
+                                                <td class="constraint detail">name_store_join_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="number.store_id references store.id via number_store_id_fkey"><a href='number.html'>number</a><span class='relatedKey'>.store_id</span></td>
+                                                <td class="constraint detail">number_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="plugin_data.store_id references store.id via plugin_data_store_id_fkey"><a href='plugin_data.html'>plugin_data</a><span class='relatedKey'>.store_id</span></td>
+                                                <td class="constraint detail">plugin_data_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="preference.store_id references store.id via preference_store_id_fkey"><a href='preference.html'>preference</a><span class='relatedKey'>.store_id</span></td>
+                                                <td class="constraint detail">preference_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="program_enrolment.store_id references store.id via program_enrolment_store_id_fkey"><a href='program_enrolment.html'>program_enrolment</a><span class='relatedKey'>.store_id</span></td>
+                                                <td class="constraint detail">program_enrolment_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="purchase_order.store_id references store.id via purchase_order_store_id_fkey"><a href='purchase_order.html'>purchase_order</a><span class='relatedKey'>.store_id</span></td>
+                                                <td class="constraint detail">purchase_order_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="purchase_order_line.store_id references store.id via purchase_order_line_store_id_fkey"><a href='purchase_order_line.html'>purchase_order_line</a><span class='relatedKey'>.store_id</span></td>
+                                                <td class="constraint detail">purchase_order_line_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="requisition.store_id references store.id via requisition_store_id_fkey"><a href='requisition.html'>requisition</a><span class='relatedKey'>.store_id</span></td>
+                                                <td class="constraint detail">requisition_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="rnr_form.store_id references store.id via rnr_form_store_id_fkey"><a href='rnr_form.html'>rnr_form</a><span class='relatedKey'>.store_id</span></td>
+                                                <td class="constraint detail">rnr_form_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="sensor.store_id references store.id via sensor_store_id_fkey"><a href='sensor.html'>sensor</a><span class='relatedKey'>.store_id</span></td>
+                                                <td class="constraint detail">sensor_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="stock_line.store_id references store.id via stock_line_store_id_fkey"><a href='stock_line.html'>stock_line</a><span class='relatedKey'>.store_id</span></td>
+                                                <td class="constraint detail">stock_line_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="stocktake.store_id references store.id via stocktake_store_id_fkey"><a href='stocktake.html'>stocktake</a><span class='relatedKey'>.store_id</span></td>
+                                                <td class="constraint detail">stocktake_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="sync_message.from_store_id references store.id via sync_message_from_store_id_fkey"><a href='sync_message.html'>sync_message</a><span class='relatedKey'>.from_store_id</span></td>
+                                                <td class="constraint detail">sync_message_from_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="sync_message.to_store_id references store.id via sync_message_to_store_id_fkey"><a href='sync_message.html'>sync_message</a><span class='relatedKey'>.to_store_id</span></td>
+                                                <td class="constraint detail">sync_message_to_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="temperature_breach.store_id references store.id via temperature_breach_store_id_fkey"><a href='temperature_breach.html'>temperature_breach</a><span class='relatedKey'>.store_id</span></td>
+                                                <td class="constraint detail">temperature_breach_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="temperature_breach_config.store_id references store.id via temperature_breach_config_store_id_fkey"><a href='temperature_breach_config.html'>temperature_breach_config</a><span class='relatedKey'>.store_id</span></td>
+                                                <td class="constraint detail">temperature_breach_config_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="temperature_log.store_id references store.id via temperature_log_store_id_fkey"><a href='temperature_log.html'>temperature_log</a><span class='relatedKey'>.store_id</span></td>
+                                                <td class="constraint detail">temperature_log_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="user_permission.store_id references store.id via user_permission_store_id_fkey"><a href='user_permission.html'>user_permission</a><span class='relatedKey'>.store_id</span></td>
+                                                <td class="constraint detail">user_permission_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="user_store_join.store_id references store.id via user_store_join_store_id_fkey"><a href='user_store_join.html'>user_store_join</a><span class='relatedKey'>.store_id</span></td>
+                                                <td class="constraint detail">user_store_join_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="vvm_status_log.store_id references store.id via vvm_status_log_store_id_fkey"><a href='vvm_status_log.html'>vvm_status_log</a><span class='relatedKey'>.store_id</span></td>
+                                                <td class="constraint detail">vvm_status_log_store_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="code">code</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="site_id">site_id</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="store_mode">store_mode</span></td>
+                                    <td>store_mode</td>
+                                    <td>2147483647</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>&#39;STORE&#39;::store_mode</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="logo">logo</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="created_date">created_date</span></td>
+                                    <td>date</td>
+                                    <td>13</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="name_link_id">name_link_id</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="store.name_link_id references name_link.id via store_name_link_id_fkey"><a href='name_link.html'>name_link</a><span class='relatedKey'>.id</span></td>
+                                                <td class="constraint detail">store_name_link_id_fkey</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="is_disabled">is_disabled</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>false</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 id="Indexes" class="box-title">Indexes</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="indexes_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Type</th>
+                                    <th>Sort</th>
+                                    <th>Column(s)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> store_pkey</td>
+                                    <td>Primary key</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>id</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>index_store_site_id</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>site_id</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="activity_log.html" target="_top" title="activity_log" alt="" coords="732,1435,927,1611">
+<area shape="rect" id="node2" href="store.html" target="_top" title="store" alt="" coords="231,2477,609,2781">
+<area shape="rect" id="node4" href="name_link.html" target="_top" title="name_link" alt="" coords="5,1287,187,1409">
+<area shape="rect" id="node3" href="asset.html" target="_top" title="asset" alt="" coords="687,323,972,704">
+<area shape="rect" id="node5" href="clinician.html" target="_top" title="clinician" alt="" coords="731,1700,927,1847">
+<area shape="rect" id="node6" href="clinician_store_join.html" target="_top" title="clinician_store_join" alt="" coords="695,1864,963,2040">
+<area shape="rect" id="node7" href="contact_form.html" target="_top" title="contact_form" alt="" coords="719,2057,939,2204">
+<area shape="rect" id="node8" href="contact_trace.html" target="_top" title="contact_trace" alt="" coords="693,5,965,269">
+<area shape="rect" id="node9" href="indicator_value.html" target="_top" title="indicator_value" alt="" coords="692,721,967,985">
+<area shape="rect" id="node10" href="invoice.html" target="_top" title="invoice" alt="" coords="1051,1292,1407,1908">
+<area shape="rect" id="node11" href="purchase_order.html" target="_top" title="purchase_order" alt="" coords="659,1003,1000,1237">
+<area shape="rect" id="node12" href="item_store_join.html" target="_top" title="item_store_join" alt="" coords="672,2257,987,2433">
+<area shape="rect" id="node13" href="location.html" target="_top" title="location" alt="" coords="726,2680,933,2856">
+<area shape="rect" id="node14" href="location_movement.html" target="_top" title="location_movement" alt="" coords="1497,2804,1771,3009">
+<area shape="rect" id="node15" href="stock_line.html" target="_top" title="stock_line" alt="" coords="1071,3101,1386,3600">
+<area shape="rect" id="node16" href="name_store_join.html" target="_top" title="name_store_join" alt="" coords="709,4083,950,4259">
+<area shape="rect" id="node17" href="number.html" target="_top" title="number" alt="" coords="750,2451,909,2627">
+<area shape="rect" id="node18" href="plugin_data.html" target="_top" title="plugin_data" alt="" coords="720,2945,939,3092">
+<area shape="rect" id="node19" href="preference.html" target="_top" title="preference" alt="" coords="734,3109,925,3256">
+<area shape="rect" id="node20" href="program_enrolment.html" target="_top" title="program_enrolment" alt="" coords="691,4276,967,4481">
+<area shape="rect" id="node21" href="purchase_order_line.html" target="_top" title="purchase_order_line" alt="" coords="1049,973,1408,1237">
+<area shape="rect" id="node22" href="requisition.html" target="_top" title="requisition" alt="" coords="669,4499,989,4880">
+<area shape="rect" id="node23" href="rnr_form.html" target="_top" title="rnr_form" alt="" coords="705,4933,954,5168">
+<area shape="rect" id="node24" href="sensor.html" target="_top" title="sensor" alt="" coords="1080,2436,1377,2612">
+<area shape="rect" id="node25" href="stocktake.html" target="_top" title="stocktake" alt="" coords="1498,1175,1770,1468">
+<area shape="rect" id="node26" href="sync_message.html" target="_top" title="sync_message" alt="" coords="718,3273,941,3449">
+<area shape="rect" id="node27" href="temperature_breach.html" target="_top" title="temperature_breach" alt="" coords="1452,2504,1816,2709">
+<area shape="rect" id="node28" href="temperature_breach_config.html" target="_top" title="temperature_breach_config" alt="" coords="653,3467,1005,3613">
+<area shape="rect" id="node29" href="temperature_log.html" target="_top" title="temperature_log" alt="" coords="1860,2368,2135,2632">
+<area shape="rect" id="node30" href="user_permission.html" target="_top" title="user_permission" alt="" coords="708,3631,951,3836">
+<area shape="rect" id="node31" href="user_store_join.html" target="_top" title="user_store_join" alt="" coords="714,3853,945,4029">
+<area shape="rect" id="node32" href="vvm_status_log.html" target="_top" title="vvm_status_log" alt="" coords="1517,3264,1751,3469">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/store.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="activity_log.html" target="_top" title="activity_log" alt="" coords="1356,1743,1551,1919">
+<area shape="rect" id="node2" href="store.html" target="_top" title="store" alt="" coords="855,1770,1233,2074">
+<area shape="rect" id="node8" href="name_link.html" target="_top" title="name_link" alt="" coords="573,3038,755,3126">
+<area shape="rect" id="node3" href="asset.html" target="_top" title="asset" alt="" coords="1385,74,1521,162">
+<area shape="rect" id="node4" href="asset_catalogue_item.html" target="_top" title="asset_catalogue_item" alt="" coords="897,107,1191,195">
+<area shape="rect" id="node5" href="asset_catalogue_type.html" target="_top" title="asset_catalogue_type" alt="" coords="517,55,811,143">
+<area shape="rect" id="node6" href="asset_category.html" target="_top" title="asset_category" alt="" coords="243,55,473,143">
+<area shape="rect" id="node7" href="asset_class.html" target="_top" title="asset_class" alt="" coords="5,55,199,143">
+<area shape="rect" id="node44" href="name.html" target="_top" title="name" alt="" coords="289,3035,427,3123">
+<area shape="rect" id="node9" href="asset_internal_location.html" target="_top" title="asset_internal_location" alt="" coords="1677,124,1985,212">
+<area shape="rect" id="node10" href="asset_log.html" target="_top" title="asset_log" alt="" coords="1743,19,1918,107">
+<area shape="rect" id="node11" href="barcode.html" target="_top" title="barcode" alt="" coords="963,2640,1125,2728">
+<area shape="rect" id="node12" href="changelog.html" target="_top" title="changelog" alt="" coords="952,531,1136,619">
+<area shape="rect" id="node13" href="clinician.html" target="_top" title="clinician" alt="" coords="1355,2494,1551,2640">
+<area shape="rect" id="node14" href="clinician_link.html" target="_top" title="clinician_link" alt="" coords="1727,2552,1935,2640">
+<area shape="rect" id="node15" href="clinician_store_join.html" target="_top" title="clinician_store_join" alt="" coords="2032,2298,2300,2474">
+<area shape="rect" id="node16" href="contact.html" target="_top" title="contact" alt="" coords="966,636,1122,724">
+<area shape="rect" id="node17" href="contact_form.html" target="_top" title="contact_form" alt="" coords="1343,1936,1563,2083">
+<area shape="rect" id="node18" href="contact_trace.html" target="_top" title="contact_trace" alt="" coords="1345,3638,1561,3726">
+<area shape="rect" id="node19" href="document.html" target="_top" title="document" alt="" coords="953,3647,1135,3735">
+<area shape="rect" id="node20" href="program.html" target="_top" title="program" alt="" coords="961,3814,1127,3902">
+<area shape="rect" id="node21" href="context.html" target="_top" title="context" alt="" coords="585,3610,743,3698">
+<area shape="rect" id="node22" href="encounter.html" target="_top" title="encounter" alt="" coords="1362,3779,1545,3867">
+<area shape="rect" id="node23" href="indicator_value.html" target="_top" title="indicator_value" alt="" coords="1337,283,1569,371">
+<area shape="rect" id="node24" href="indicator_column.html" target="_top" title="indicator_column" alt="" coords="919,248,1169,336">
+<area shape="rect" id="node25" href="indicator_line.html" target="_top" title="indicator_line" alt="" coords="937,354,1151,442">
+<area shape="rect" id="node26" href="period.html" target="_top" title="period" alt="" coords="971,778,1117,866">
+<area shape="rect" id="node27" href="invoice.html" target="_top" title="invoice" alt="" coords="2089,3048,2243,3136">
+<area shape="rect" id="node28" href="currency.html" target="_top" title="currency" alt="" coords="17,3432,187,3520">
+<area shape="rect" id="node29" href="diagnosis.html" target="_top" title="diagnosis" alt="" coords="1743,2940,1919,3028">
+<area shape="rect" id="node30" href="name_insurance_join.html" target="_top" title="name_insurance_join" alt="" coords="1687,3239,1974,3327">
+<area shape="rect" id="node31" href="purchase_order.html" target="_top" title="purchase_order" alt="" coords="1336,3168,1571,3256">
+<area shape="rect" id="node32" href="shipping_method.html" target="_top" title="shipping_method" alt="" coords="1705,3046,1956,3134">
+<area shape="rect" id="node33" href="invoice_line.html" target="_top" title="invoice_line" alt="" coords="2387,1694,2584,1782">
+<area shape="rect" id="node34" href="campaign.html" target="_top" title="campaign" alt="" coords="1741,1448,1920,1536">
+<area shape="rect" id="node35" href="item_link.html" target="_top" title="item_link" alt="" coords="1367,1244,1539,1332">
+<area shape="rect" id="node36" href="item_variant.html" target="_top" title="item_variant" alt="" coords="1728,972,1933,1060">
+<area shape="rect" id="node37" href="location.html" target="_top" title="location" alt="" coords="1750,867,1911,955">
+<area shape="rect" id="node38" href="stock_line.html" target="_top" title="stock_line" alt="" coords="2076,1696,2256,1784">
+<area shape="rect" id="node39" href="vvm_status.html" target="_top" title="vvm_status" alt="" coords="1734,2447,1927,2535">
+<area shape="rect" id="node41" href="location_type.html" target="_top" title="location_type" alt="" coords="1346,903,1561,991">
+<area shape="rect" id="node40" href="item_store_join.html" target="_top" title="item_store_join" alt="" coords="1673,1219,1988,1395">
+<area shape="rect" id="node42" href="location_movement.html" target="_top" title="location_movement" alt="" coords="2349,1063,2622,1151">
+<area shape="rect" id="node43" href="master_list_name_join.html" target="_top" title="master_list_name_join" alt="" coords="895,2746,1193,2834">
+<area shape="rect" id="node45" href="name_store_join.html" target="_top" title="name_store_join" alt="" coords="1333,2923,1574,3011">
+<area shape="rect" id="node46" href="name_tag_join.html" target="_top" title="name_tag_join" alt="" coords="933,2851,1155,2939">
+<area shape="rect" id="node47" href="number.html" target="_top" title="number" alt="" coords="1374,2100,1533,2276">
+<area shape="rect" id="node48" href="plugin_data.html" target="_top" title="plugin_data" alt="" coords="1344,2294,1563,2440">
+<area shape="rect" id="node49" href="preference.html" target="_top" title="preference" alt="" coords="1358,1080,1549,1227">
+<area shape="rect" id="node50" href="program_enrolment.html" target="_top" title="program_enrolment" alt="" coords="1315,3532,1591,3620">
+<area shape="rect" id="node51" href="program_event.html" target="_top" title="program_event" alt="" coords="929,3506,1159,3594">
+<area shape="rect" id="node52" href="purchase_order_line.html" target="_top" title="purchase_order_line" alt="" coords="1691,2747,1971,2835">
+<area shape="rect" id="node53" href="requisition.html" target="_top" title="requisition" alt="" coords="1359,424,1548,512">
+<area shape="rect" id="node54" href="requisition_line.html" target="_top" title="requisition_line" alt="" coords="1714,1078,1947,1166">
+<area shape="rect" id="node55" href="rnr_form.html" target="_top" title="rnr_form" alt="" coords="1369,2746,1537,2834">
+<area shape="rect" id="node56" href="rnr_form_line.html" target="_top" title="rnr_form_line" alt="" coords="1725,1626,1937,1714">
+<area shape="rect" id="node57" href="sensor.html" target="_top" title="sensor" alt="" coords="2092,831,2240,919">
+<area shape="rect" id="node58" href="stocktake.html" target="_top" title="stocktake" alt="" coords="2396,3048,2575,3136">
+<area shape="rect" id="node59" href="stocktake_line.html" target="_top" title="stocktake_line" alt="" coords="2681,1446,2905,1534">
+<area shape="rect" id="node60" href="sync_message.html" target="_top" title="sync_message" alt="" coords="1342,1386,1565,1562">
+<area shape="rect" id="node61" href="temperature_breach.html" target="_top" title="temperature_breach" alt="" coords="2344,774,2627,862">
+<area shape="rect" id="node62" href="temperature_breach_config.html" target="_top" title="temperature_breach_config" alt="" coords="1277,1579,1629,1726">
+<area shape="rect" id="node63" href="temperature_log.html" target="_top" title="temperature_log" alt="" coords="2671,843,2916,931">
+<area shape="rect" id="node64" href="user_permission.html" target="_top" title="user_permission" alt="" coords="1332,3310,1575,3515">
+<area shape="rect" id="node65" href="user_store_join.html" target="_top" title="user_store_join" alt="" coords="1338,530,1569,706">
+<area shape="rect" id="node66" href="user_account.html" target="_top" title="user_account" alt="" coords="938,919,1150,1007">
+<area shape="rect" id="node67" href="vvm_status_log.html" target="_top" title="vvm_status_log" alt="" coords="2677,1764,2910,1852">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/store.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 7.0.2</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>
