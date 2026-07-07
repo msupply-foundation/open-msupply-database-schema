@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>omsupply-database.public</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="bower/html5shiv/html5shiv.min.js"></script>
+        <script src="bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="index.html" class="navbar-brand"><b>omsupply-database</b></a><span class="navbar-brand" style="padding-left: 0">.public</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>All Relationships</h1>
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 class="box-title">Diagrams</h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom">
+                                <!-- Tabs within a box -->
+                                <h5>By default only columns that are primary keys, foreign keys or indexes are shown.</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#compactDegreeImg-chart" data-toggle="tab" aria-expanded="true">Compact</a></li>
+                                    <li class=""><a href="#largeDegreeImg-chart" data-toggle="tab" aria-expanded="true">Large</a></li>
+                                    <li class=""><a href="#compactimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Compact Implied</a></li>
+                                    <li class=""><a href="#largeimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Large Implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="compactDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="compactRelationshipsDiagram" name="compactRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/item_store_join.html" target="_top" title="item_store_join" alt="" coords="2541,1895,2856,2100">
+<area shape="rect" id="node33" href="tables/location.html" target="_top" title="location" alt="" coords="2152,1947,2359,2123">
+<area shape="rect" id="node57" href="tables/store.html" target="_top" title="store" alt="" coords="1783,4384,1959,4560">
+<area shape="rect" id="node67" href="tables/item_link.html" target="_top" title="item_link" alt="" coords="2169,907,2341,1029">
+<area shape="rect" id="node2" href="tables/changelog_p_5000001.html" target="_top" title="changelog_p_5000001" alt="" coords="4325,2721,4624,2985">
+<area shape="rect" id="node3" href="tables/changelog_p_25000001.html" target="_top" title="changelog_p_25000001" alt="" coords="4325,3081,4636,3345">
+<area shape="rect" id="node4" href="tables/email_queue.html" target="_top" title="email_queue" alt="" coords="4685,1548,4891,1665">
+<area shape="rect" id="node5" href="tables/changelog_p_15000001.html" target="_top" title="changelog_p_15000001" alt="" coords="4325,3441,4636,3705">
+<area shape="rect" id="node6" href="tables/custom_field.html" target="_top" title="custom_field" alt="" coords="4325,1903,4545,2049">
+<area shape="rect" id="node7" href="tables/stock_relocation.html" target="_top" title="stock_relocation" alt="" coords="3421,1816,3693,2080">
+<area shape="rect" id="node99" href="tables/stock_line.html" target="_top" title="stock_line" alt="" coords="2982,1713,3297,2241">
+<area shape="rect" id="node8" href="tables/context.html" target="_top" title="context" alt="" coords="1447,6805,1604,6923">
+<area shape="rect" id="node9" href="tables/clinician_link.html" target="_top" title="clinician_link" alt="" coords="2595,5433,2803,5556">
+<area shape="rect" id="node121" href="tables/clinician.html" target="_top" title="clinician" alt="" coords="2157,4912,2353,5059">
+<area shape="rect" id="node10" href="tables/custom_field_option.html" target="_top" title="custom_field_option" alt="" coords="4589,1776,4868,1952">
+<area shape="rect" id="node11" href="tables/abbreviation.html" target="_top" title="abbreviation" alt="" coords="4805,5688,5013,5805">
+<area shape="rect" id="node12" href="tables/demographic_indicator.html" target="_top" title="demographic_indicator" alt="" coords="2102,7819,2409,7965">
+<area shape="rect" id="node71" href="tables/demographic.html" target="_top" title="demographic" alt="" coords="1735,7404,2008,7521">
+<area shape="rect" id="node13" href="tables/insurance_provider.html" target="_top" title="insurance_provider" alt="" coords="2104,5148,2407,5265">
+<area shape="rect" id="node14" href="tables/asset_class.html" target="_top" title="asset_class" alt="" coords="799,313,993,436">
+<area shape="rect" id="node15" href="tables/clinician_store_join.html" target="_top" title="clinician_store_join" alt="" coords="3005,4784,3273,4960">
+<area shape="rect" id="node16" href="tables/program_indicator.html" target="_top" title="program_indicator" alt="" coords="2124,7441,2387,7588">
+<area shape="rect" id="node30" href="tables/program.html" target="_top" title="program" alt="" coords="1761,7211,1981,7387">
+<area shape="rect" id="node17" href="tables/document.html" target="_top" title="document" alt="" coords="1750,6588,1993,6823">
+<area shape="rect" id="node37" href="tables/name_link.html" target="_top" title="name_link" alt="" coords="1435,3891,1616,4013">
+<area shape="rect" id="node98" href="tables/form_schema.html" target="_top" title="form_schema" alt="" coords="1419,7597,1631,7715">
+<area shape="rect" id="node18" href="tables/migration_fragment_log.html" target="_top" title="migration_fragment_log" alt="" coords="365,5208,683,5325">
+<area shape="rect" id="node19" href="tables/indicator_line.html" target="_top" title="indicator_line" alt="" coords="2571,7383,2826,7529">
+<area shape="rect" id="node20" href="tables/purchase_order_line.html" target="_top" title="purchase_order_line" alt="" coords="2519,2661,2878,2925">
+<area shape="rect" id="node27" href="tables/purchase_order.html" target="_top" title="purchase_order" alt="" coords="2085,2769,2426,3004">
+<area shape="rect" id="node21" href="tables/sensor.html" target="_top" title="sensor" alt="" coords="2550,3525,2847,3701">
+<area shape="rect" id="node22" href="tables/period_schedule.html" target="_top" title="period_schedule" alt="" coords="1404,7103,1647,7220">
+<area shape="rect" id="node23" href="tables/changelog_p_1.html" target="_top" title="changelog_p_1" alt="" coords="4505,5661,4732,5925">
+<area shape="rect" id="node24" href="tables/user_permission.html" target="_top" title="user_permission" alt="" coords="2134,5355,2377,5560">
+<area shape="rect" id="node25" href="tables/item.html" target="_top" title="item" alt="" coords="1716,907,2027,1141">
+<area shape="rect" id="node79" href="tables/unit.html" target="_top" title="unit" alt="" coords="1446,936,1605,1083">
+<area shape="rect" id="node127" href="tables/location_type.html" target="_top" title="location_type" alt="" coords="1415,1109,1636,1227">
+<area shape="rect" id="node26" href="tables/temperature_breach.html" target="_top" title="temperature_breach" alt="" coords="2957,3547,3321,3752">
+<area shape="rect" id="node115" href="tables/currency.html" target="_top" title="currency" alt="" coords="785,4161,1007,4279">
+<area shape="rect" id="node28" href="tables/item_category_join.html" target="_top" title="item_category_join" alt="" coords="2565,2252,2832,2428">
+<area shape="rect" id="node41" href="tables/category.html" target="_top" title="category" alt="" coords="2145,2599,2365,2716">
+<area shape="rect" id="node29" href="tables/preference.html" target="_top" title="preference" alt="" coords="2160,4460,2351,4607">
+<area shape="rect" id="node59" href="tables/master_list.html" target="_top" title="master_list" alt="" coords="1399,6671,1651,6788">
+<area shape="rect" id="node31" href="tables/stocktake_line.html" target="_top" title="stocktake_line" alt="" coords="3792,2163,4108,2544">
+<area shape="rect" id="node46" href="tables/campaign.html" target="_top" title="campaign" alt="" coords="2589,2117,2809,2235">
+<area shape="rect" id="node68" href="tables/reason_option.html" target="_top" title="reason_option" alt="" coords="2145,1083,2366,1200">
+<area shape="rect" id="node92" href="tables/item_variant.html" target="_top" title="item_variant" alt="" coords="2572,827,2825,1032">
+<area shape="rect" id="node103" href="tables/stocktake.html" target="_top" title="stocktake" alt="" coords="3421,4847,3693,5140">
+<area shape="rect" id="node32" href="tables/changelog_p_30000001.html" target="_top" title="changelog_p_30000001" alt="" coords="4325,3801,4636,4065">
+<area shape="rect" id="node34" href="tables/store_preference.html" target="_top" title="store_preference" alt="" coords="4325,2268,5009,2385">
+<area shape="rect" id="node35" href="tables/rnr_form.html" target="_top" title="rnr_form" alt="" coords="2131,5577,2380,5812">
+<area shape="rect" id="node93" href="tables/period.html" target="_top" title="period" alt="" coords="1754,6876,1989,7023">
+<area shape="rect" id="node36" href="tables/indicator_column.html" target="_top" title="indicator_column" alt="" coords="2571,7547,2826,7693">
+<area shape="rect" id="node90" href="tables/name.html" target="_top" title="name" alt="" coords="1051,3920,1335,4184">
+<area shape="rect" id="node38" href="tables/changelog_p_20000001.html" target="_top" title="changelog_p_20000001" alt="" coords="4325,4161,4636,4425">
+<area shape="rect" id="node39" href="tables/sync_buffer_archive.html" target="_top" title="sync_buffer_archive" alt="" coords="365,5929,700,6105">
+<area shape="rect" id="node40" href="tables/invoice_line.html" target="_top" title="invoice_line" alt="" coords="3365,1241,3748,1799">
+<area shape="rect" id="node88" href="tables/invoice.html" target="_top" title="invoice" alt="" coords="2961,4993,3317,5727">
+<area shape="rect" id="node109" href="tables/vvm_status.html" target="_top" title="vvm_status" alt="" coords="2602,1760,2795,1877">
+<area shape="rect" id="node42" href="tables/demographic_projection.html" target="_top" title="demographic_projection" alt="" coords="365,4968,684,5085">
+<area shape="rect" id="node43" href="tables/program_requisition_order_type.html" target="_top" title="program_requisition_order_type" alt="" coords="2501,6983,2897,7129">
+<area shape="rect" id="node102" href="tables/program_requisition_settings.html" target="_top" title="program_requisition_settings" alt="" coords="2071,6977,2440,7159">
+<area shape="rect" id="node44" href="tables/system_log.html" target="_top" title="system_log" alt="" coords="185,2359,377,2505">
+<area shape="rect" id="node45" href="tables/location_movement.html" target="_top" title="location_movement" alt="" coords="3420,2295,3693,2500">
+<area shape="rect" id="node47" href="tables/site.html" target="_top" title="site" alt="" coords="365,4728,663,4845">
+<area shape="rect" id="node48" href="tables/frontend_plugin.html" target="_top" title="frontend_plugin" alt="" coords="425,3588,664,3705">
+<area shape="rect" id="node49" href="tables/vaccine_course_item.html" target="_top" title="vaccine_course_item" alt="" coords="2557,5240,2841,5416">
+<area shape="rect" id="node119" href="tables/vaccine_course.html" target="_top" title="vaccine_course" alt="" coords="2110,7212,2401,7388">
+<area shape="rect" id="node50" href="tables/asset_internal_location.html" target="_top" title="asset_internal_location" alt="" coords="2545,5,2853,157">
+<area shape="rect" id="node51" href="tables/asset.html" target="_top" title="asset" alt="" coords="2113,204,2398,585">
+<area shape="rect" id="node76" href="tables/asset_category.html" target="_top" title="asset_category" alt="" coords="1077,255,1308,407">
+<area shape="rect" id="node113" href="tables/asset_catalogue_item.html" target="_top" title="asset_catalogue_item" alt="" coords="1725,77,2018,312">
+<area shape="rect" id="node125" href="tables/asset_catalogue_type.html" target="_top" title="asset_catalogue_type" alt="" coords="1379,219,1672,371">
+<area shape="rect" id="node52" href="tables/vaccine_course_store_config.html" target="_top" title="vaccine_course_store_config" alt="" coords="2519,6789,2878,6965">
+<area shape="rect" id="node53" href="tables/temperature_breach_config.html" target="_top" title="temperature_breach_config" alt="" coords="2079,3129,2431,3276">
+<area shape="rect" id="node54" href="tables/vaccine_course_dose.html" target="_top" title="vaccine_course_dose" alt="" coords="2556,7183,2841,7329">
+<area shape="rect" id="node55" href="tables/shipping_method.html" target="_top" title="shipping_method" alt="" coords="2573,5609,2824,5727">
+<area shape="rect" id="node56" href="tables/rnr_form_line.html" target="_top" title="rnr_form_line" alt="" coords="2484,3136,2913,3312">
+<area shape="rect" id="node58" href="tables/name_property.html" target="_top" title="name_property" alt="" coords="4565,2479,4796,2625">
+<area shape="rect" id="node82" href="tables/property.html" target="_top" title="property" alt="" coords="4325,2508,4521,2625">
+<area shape="rect" id="node60" href="tables/contact.html" target="_top" title="contact" alt="" coords="1785,1855,1958,2001">
+<area shape="rect" id="node61" href="tables/sync_log.html" target="_top" title="sync_log" alt="" coords="305,5688,680,5805">
+<area shape="rect" id="node62" href="tables/contact_trace.html" target="_top" title="contact_trace" alt="" coords="2119,6088,2391,6352">
+<area shape="rect" id="node63" href="tables/barcode.html" target="_top" title="barcode" alt="" coords="2129,1289,2382,1495">
+<area shape="rect" id="node64" href="tables/ancillary_item.html" target="_top" title="ancillary_item" alt="" coords="2571,597,2827,773">
+<area shape="rect" id="node65" href="tables/packaging_variant.html" target="_top" title="packaging_variant" alt="" coords="3008,1005,3271,1152">
+<area shape="rect" id="node66" href="tables/requisition.html" target="_top" title="requisition" alt="" coords="2089,1512,2421,1893">
+<area shape="rect" id="node69" href="tables/name_insurance_join.html" target="_top" title="name_insurance_join" alt="" coords="2555,5780,2842,5956">
+<area shape="rect" id="node70" href="tables/master_list_line.html" target="_top" title="master_list_line" alt="" coords="2581,5047,2817,5223">
+<area shape="rect" id="node72" href="tables/asset_property.html" target="_top" title="asset_property" alt="" coords="425,3348,655,3465">
+<area shape="rect" id="node73" href="tables/user_account.html" target="_top" title="user_account" alt="" coords="1747,2241,1995,2359">
+<area shape="rect" id="node74" href="tables/custom_field_scope.html" target="_top" title="custom_field_scope" alt="" coords="4593,1969,4865,2145">
+<area shape="rect" id="node75" href="tables/diagnosis.html" target="_top" title="diagnosis" alt="" coords="2611,4912,2787,5029">
+<area shape="rect" id="node77" href="tables/help_document.html" target="_top" title="help_document" alt="" coords="425,3108,657,3225">
+<area shape="rect" id="node78" href="tables/number.html" target="_top" title="number" alt="" coords="2176,3293,2335,3469">
+<area shape="rect" id="node80" href="tables/asset_log.html" target="_top" title="asset_log" alt="" coords="2589,175,2809,380">
+<area shape="rect" id="node94" href="tables/asset_log_reason.html" target="_top" title="asset_log_reason" alt="" coords="2131,603,2380,720">
+<area shape="rect" id="node81" href="tables/contact_form.html" target="_top" title="contact_form" alt="" coords="2145,3487,2365,3633">
+<area shape="rect" id="node83" href="tables/bundled_item.html" target="_top" title="bundled_item" alt="" coords="2993,812,3285,988">
+<area shape="rect" id="node84" href="tables/key_value_store.html" target="_top" title="key_value_store" alt="" coords="425,2868,664,2985">
+<area shape="rect" id="node85" href="tables/name_tag.html" target="_top" title="name_tag" alt="" coords="1782,7040,1961,7157">
+<area shape="rect" id="node86" href="tables/user_store_join.html" target="_top" title="user_store_join" alt="" coords="2140,2212,2371,2388">
+<area shape="rect" id="node87" href="tables/sync_file_reference.html" target="_top" title="sync_file_reference" alt="" coords="425,2628,696,2745">
+<area shape="rect" id="node89" href="tables/warning.html" target="_top" title="warning" alt="" coords="2167,3903,2343,4020">
+<area shape="rect" id="node91" href="tables/requisition_line.html" target="_top" title="requisition_line" alt="" coords="2523,1085,2875,1320">
+<area shape="rect" id="node95" href="tables/program_enrolment.html" target="_top" title="program_enrolment" alt="" coords="2117,5865,2393,6071">
+<area shape="rect" id="node96" href="tables/plugin_data.html" target="_top" title="plugin_data" alt="" coords="2146,3651,2365,3885">
+<area shape="rect" id="node97" href="tables/activity_log.html" target="_top" title="activity_log" alt="" coords="2158,4037,2353,4213">
+<area shape="rect" id="node100" href="tables/indicator_value.html" target="_top" title="indicator_value" alt="" coords="3002,6625,3277,6889">
+<area shape="rect" id="node101" href="tables/sync_request.html" target="_top" title="sync_request" alt="" coords="485,2388,709,2505">
+<area shape="rect" id="node104" href="tables/__diesel_schema_migrations.html" target="_top" title="__diesel_schema_migrations" alt="" coords="305,5448,661,5565">
+<area shape="rect" id="node105" href="tables/document_registry.html" target="_top" title="document_registry" alt="" coords="1738,7539,2005,7715">
+<area shape="rect" id="node106" href="tables/item_warning_join.html" target="_top" title="item_warning_join" alt="" coords="2569,2943,2829,3119">
+<area shape="rect" id="node107" href="tables/temperature_log.html" target="_top" title="temperature_log" alt="" coords="3419,3437,3694,3701">
+<area shape="rect" id="node108" href="tables/changelog_p_10000001.html" target="_top" title="changelog_p_10000001" alt="" coords="4325,4521,4636,4785">
+<area shape="rect" id="node110" href="tables/vvm_status_log.html" target="_top" title="vvm_status_log" alt="" coords="3833,1940,4067,2145">
+<area shape="rect" id="node111" href="tables/item_direction.html" target="_top" title="item_direction" alt="" coords="2587,433,2811,580">
+<area shape="rect" id="node112" href="tables/sync_log_v7.html" target="_top" title="sync_log_v7" alt="" coords="4325,4908,4755,5025">
+<area shape="rect" id="node114" href="tables/name_tag_join.html" target="_top" title="name_tag_join" alt="" coords="2144,6513,2367,6665">
+<area shape="rect" id="node116" href="tables/sync_buffer_pending.html" target="_top" title="sync_buffer_pending" alt="" coords="4325,5121,4660,5385">
+<area shape="rect" id="node117" href="tables/encounter.html" target="_top" title="encounter" alt="" coords="2145,6719,2365,6924">
+<area shape="rect" id="node118" href="tables/master_list_name_join.html" target="_top" title="master_list_name_join" alt="" coords="1722,6153,2021,6305">
+<area shape="rect" id="node120" href="tables/vaccination.html" target="_top" title="vaccination" alt="" coords="3000,7153,3279,7300">
+<area shape="rect" id="node122" href="tables/sync_message.html" target="_top" title="sync_message" alt="" coords="2144,4231,2367,4407">
+<area shape="rect" id="node123" href="tables/report.html" target="_top" title="report" alt="" coords="1739,7732,2004,7879">
+<area shape="rect" id="node124" href="tables/program_event.html" target="_top" title="program_event" alt="" coords="1741,6359,2001,6535">
+<area shape="rect" id="node126" href="tables/backend_plugin.html" target="_top" title="backend_plugin" alt="" coords="425,2148,661,2265">
+<area shape="rect" id="node128" href="tables/name_store_join.html" target="_top" title="name_store_join" alt="" coords="2135,2405,2376,2581">
+<area shape="rect" id="node129" href="tables/printer.html" target="_top" title="printer" alt="" coords="185,3588,353,3705">
+<area shape="rect" id="node130" href="tables/name_store_join_view.html" target="_top" title="name_store_join_view" alt="" coords="365,1961,657,2025">
+<area shape="rect" id="node131" href="tables/rnr_form_view.html" target="_top" title="rnr_form_view" alt="" coords="65,4901,284,4965">
+<area shape="rect" id="node132" href="tables/stocktake_line_view.html" target="_top" title="stocktake_line_view" alt="" coords="425,6221,700,6285">
+<area shape="rect" id="node133" href="tables/contact_view.html" target="_top" title="contact_view" alt="" coords="65,4721,273,4785">
+<area shape="rect" id="node134" href="tables/vaccination_course.html" target="_top" title="vaccination_course" alt="" coords="4865,4901,5132,4965">
+<area shape="rect" id="node135" href="tables/inventory_adjustment_stock_movement.html" target="_top" title="inventory_adjustment_stock_movement" alt="" coords="4325,5501,4793,5565">
+<area shape="rect" id="node136" href="tables/ancillary_item_view.html" target="_top" title="ancillary_item_view" alt="" coords="4865,5501,5136,5565">
+<area shape="rect" id="node137" href="tables/report_program_enrolment.html" target="_top" title="report_program_enrolment" alt="" coords="365,4541,709,4605">
+<area shape="rect" id="node138" href="tables/purchase_order_line_view.html" target="_top" title="purchase_order_line_view" alt="" coords="365,1781,696,1845">
+<area shape="rect" id="node139" href="tables/encounter_view.html" target="_top" title="encounter_view" alt="" coords="4865,6221,5099,6285">
+<area shape="rect" id="node140" href="tables/item_ledger.html" target="_top" title="item_ledger" alt="" coords="65,4541,261,4605">
+<area shape="rect" id="node141" href="tables/invoice_stats.html" target="_top" title="invoice_stats" alt="" coords="65,2021,273,2085">
+<area shape="rect" id="node142" href="tables/contact_trace_name_link_view.html" target="_top" title="contact_trace_name_link_view" alt="" coords="305,4361,679,4425">
+<area shape="rect" id="node143" href="tables/outbound_shipment_stock_movement.html" target="_top" title="outbound_shipment_stock_movement" alt="" coords="4685,6041,5133,6105">
+<area shape="rect" id="node144" href="tables/inbound_shipment_stock_movement.html" target="_top" title="inbound_shipment_stock_movement" alt="" coords="4745,2741,5179,2805">
+<area shape="rect" id="node145" href="tables/stock_line_ledger.html" target="_top" title="stock_line_ledger" alt="" coords="4505,6221,4755,6285">
+<area shape="rect" id="node146" href="tables/master_list_line_view.html" target="_top" title="master_list_line_view" alt="" coords="4325,6041,4612,6105">
+<area shape="rect" id="node147" href="tables/latest_document.html" target="_top" title="latest_document" alt="" coords="4925,2501,5168,2565">
+<area shape="rect" id="node148" href="tables/stock_line_ledger_discrepancy.html" target="_top" title="stock_line_ledger_discrepancy" alt="" coords="305,4181,680,4245">
+<area shape="rect" id="node149" href="tables/stock_movement.html" target="_top" title="stock_movement" alt="" coords="65,6341,311,6405">
+<area shape="rect" id="node150" href="tables/invoice_view.html" target="_top" title="invoice_view" alt="" coords="65,1841,269,1905">
+<area shape="rect" id="node151" href="tables/purchase_order_stats.html" target="_top" title="purchase_order_stats" alt="" coords="4745,2921,5035,2985">
+<area shape="rect" id="node152" href="tables/indicator_value_view.html" target="_top" title="indicator_value_view" alt="" coords="4745,3101,5029,3165">
+<area shape="rect" id="node153" href="tables/stock_on_hand.html" target="_top" title="stock_on_hand" alt="" coords="125,3401,349,3465">
+<area shape="rect" id="node154" href="tables/barcode_view.html" target="_top" title="barcode_view" alt="" coords="5,5801,219,5865">
+<area shape="rect" id="node155" href="tables/item_category_join_view.html" target="_top" title="item_category_join_view" alt="" coords="4745,3281,5064,3345">
+<area shape="rect" id="node156" href="tables/consumption.html" target="_top" title="consumption" alt="" coords="5,5621,212,5685">
+<area shape="rect" id="node157" href="tables/program_enrolment_view.html" target="_top" title="program_enrolment_view" alt="" coords="4745,3461,5073,3525">
+<area shape="rect" id="node158" href="tables/report_patient.html" target="_top" title="report_patient" alt="" coords="125,3221,347,3285">
+<area shape="rect" id="node159" href="tables/store_view.html" target="_top" title="store_view" alt="" coords="5,5412,191,5505">
+<area shape="rect" id="node160" href="tables/vaccination_view.html" target="_top" title="vaccination_view" alt="" coords="65,3041,312,3105">
+<area shape="rect" id="node161" href="tables/invoice_line_stock_movement.html" target="_top" title="invoice_line_stock_movement" alt="" coords="305,4001,673,4065">
+<area shape="rect" id="node162" href="tables/invoice_line_view.html" target="_top" title="invoice_line_view" alt="" coords="65,2861,313,2925">
+<area shape="rect" id="node163" href="tables/document_view.html" target="_top" title="document_view" alt="" coords="65,2681,297,2745">
+<area shape="rect" id="node164" href="tables/invoice_line_stats.html" target="_top" title="invoice_line_stats" alt="" coords="65,2201,317,2265">
+<area shape="rect" id="node165" href="tables/name_insurance_join_view.html" target="_top" title="name_insurance_join_view" alt="" coords="4745,3641,5083,3705">
+<area shape="rect" id="node166" href="tables/report_document.html" target="_top" title="report_document" alt="" coords="65,1421,313,1485">
+<area shape="rect" id="node167" href="tables/item_store_join_view.html" target="_top" title="item_store_join_view" alt="" coords="4745,3821,5028,3885">
+<area shape="rect" id="node168" href="tables/program_event_view.html" target="_top" title="program_event_view" alt="" coords="4745,4001,5028,4065">
+<area shape="rect" id="node169" href="tables/purchase_order_view.html" target="_top" title="purchase_order_view" alt="" coords="4745,4181,5031,4245">
+<area shape="rect" id="node170" href="tables/vaccine_course_item_view.html" target="_top" title="vaccine_course_item_view" alt="" coords="4745,4361,5080,4425">
+<area shape="rect" id="node171" href="tables/vaccination_card.html" target="_top" title="vaccination_card" alt="" coords="425,1421,669,1485">
+<area shape="rect" id="node172" href="tables/stock_line_view.html" target="_top" title="stock_line_view" alt="" coords="4325,1421,4556,1485">
+<area shape="rect" id="node173" href="tables/requisitions_in_period.html" target="_top" title="requisitions_in_period" alt="" coords="4745,4541,5040,4605">
+<area shape="rect" id="node174" href="tables/store_stock_on_hand.html" target="_top" title="store_stock_on_hand" alt="" coords="4745,4721,5028,4785">
+<area shape="rect" id="node175" href="tables/report_program_event.html" target="_top" title="report_program_event" alt="" coords="4745,5141,5044,5205">
+<area shape="rect" id="node176" href="tables/master_list_name_join_view.html" target="_top" title="master_list_name_join_view" alt="" coords="305,3821,655,3885">
+<area shape="rect" id="node177" href="tables/report_store.html" target="_top" title="report_store" alt="" coords="5,4361,207,4425">
+<area shape="rect" id="node178" href="tables/rnr_form_line_view.html" target="_top" title="rnr_form_line_view" alt="" coords="4985,1421,5248,1485">
+<area shape="rect" id="node179" href="tables/item_warning_join_view.html" target="_top" title="item_warning_join_view" alt="" coords="4745,5321,5056,5385">
+<area shape="rect" id="node180" href="tables/latest_asset_log.html" target="_top" title="latest_asset_log" alt="" coords="4985,1601,5223,1665">
+<area shape="rect" id="node181" href="tables/item_variant_view.html" target="_top" title="item_variant_view" alt="" coords="4985,1781,5243,1845">
+<area shape="rect" id="node182" href="tables/store_items.html" target="_top" title="store_items" alt="" coords="5,4181,200,4245">
+<area shape="rect" id="node183" href="tables/purchase_order_line_stats.html" target="_top" title="purchase_order_line_stats" alt="" coords="245,1601,580,1665">
+<area shape="rect" id="node184" href="tables/name_tag_join_view.html" target="_top" title="name_tag_join_view" alt="" coords="4985,1961,5260,2025">
+<area shape="rect" id="node185" href="tables/replenishment.html" target="_top" title="replenishment" alt="" coords="65,6161,288,6225">
+<area shape="rect" id="node186" href="tables/report_encounter.html" target="_top" title="report_encounter" alt="" coords="425,6401,676,6465">
+<area shape="rect" id="node187" href="tables/requisition_view.html" target="_top" title="requisition_view" alt="" coords="5,5981,245,6045">
+<area shape="rect" id="node188" href="tables/item_direction_view.html" target="_top" title="item_direction_view" alt="" coords="5,5261,280,5325">
+<area shape="rect" id="node189" href="tables/requisition_line_view.html" target="_top" title="requisition_line_view" alt="" coords="4325,1601,4611,1665">
+<area shape="rect" id="node190" href="tables/adjustments.html" target="_top" title="adjustments" alt="" coords="5,4001,208,4065">
+<area shape="rect" id="node191" href="tables/changelog_view.html" target="_top" title="changelog_view" alt="" coords="5,5052,241,5145">
+</map>
+                                        <a name='diagram'><img id="compactDegreeImg" src="diagrams/summary/relationships.real.compact.png" usemap="#compactRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="largeDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="largeRelationshipsDiagram" name="largeRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/item_store_join.html" target="_top" title="item_store_join" alt="" coords="3415,2907,3729,3176">
+<area shape="rect" id="node33" href="tables/location.html" target="_top" title="location" alt="" coords="3025,1757,3232,2027">
+<area shape="rect" id="node57" href="tables/store.html" target="_top" title="store" alt="" coords="2657,5101,2833,5400">
+<area shape="rect" id="node67" href="tables/item_link.html" target="_top" title="item_link" alt="" coords="3043,1581,3215,1704">
+<area shape="rect" id="node2" href="tables/changelog_p_5000001.html" target="_top" title="changelog_p_5000001" alt="" coords="6371,5179,6669,5507">
+<area shape="rect" id="node3" href="tables/changelog_p_25000001.html" target="_top" title="changelog_p_25000001" alt="" coords="1245,8733,1556,9061">
+<area shape="rect" id="node4" href="tables/email_queue.html" target="_top" title="email_queue" alt="" coords="501,7488,707,7904">
+<area shape="rect" id="node5" href="tables/changelog_p_15000001.html" target="_top" title="changelog_p_15000001" alt="" coords="6288,4187,6599,4515">
+<area shape="rect" id="node6" href="tables/custom_field.html" target="_top" title="custom_field" alt="" coords="5709,5265,5929,5505">
+<area shape="rect" id="node7" href="tables/stock_relocation.html" target="_top" title="stock_relocation" alt="" coords="4294,2524,4566,2940">
+<area shape="rect" id="node99" href="tables/stock_line.html" target="_top" title="stock_line" alt="" coords="3855,2612,4170,3380">
+<area shape="rect" id="node8" href="tables/context.html" target="_top" title="context" alt="" coords="2320,11076,2477,11199">
+<area shape="rect" id="node9" href="tables/clinician_link.html" target="_top" title="clinician_link" alt="" coords="3468,6180,3676,6303">
+<area shape="rect" id="node121" href="tables/clinician.html" target="_top" title="clinician" alt="" coords="3031,5828,3227,6303">
+<area shape="rect" id="node10" href="tables/custom_field_option.html" target="_top" title="custom_field_option" alt="" coords="5973,5092,6252,5361">
+<area shape="rect" id="node11" href="tables/abbreviation.html" target="_top" title="abbreviation" alt="" coords="501,9488,709,9640">
+<area shape="rect" id="node12" href="tables/demographic_indicator.html" target="_top" title="demographic_indicator" alt="" coords="2975,12008,3282,12395">
+<area shape="rect" id="node71" href="tables/demographic.html" target="_top" title="demographic" alt="" coords="2608,11825,2881,11977">
+<area shape="rect" id="node13" href="tables/insurance_provider.html" target="_top" title="insurance_provider" alt="" coords="2977,10228,3280,10439">
+<area shape="rect" id="node14" href="tables/asset_class.html" target="_top" title="asset_class" alt="" coords="1673,383,1866,505">
+<area shape="rect" id="node15" href="tables/clinician_store_join.html" target="_top" title="clinician_store_join" alt="" coords="3879,6121,4147,6303">
+<area shape="rect" id="node16" href="tables/program_indicator.html" target="_top" title="program_indicator" alt="" coords="2997,11312,3260,11493">
+<area shape="rect" id="node30" href="tables/program.html" target="_top" title="program" alt="" coords="2635,11252,2855,11521">
+<area shape="rect" id="node17" href="tables/document.html" target="_top" title="document" alt="" coords="2623,10783,2866,11199">
+<area shape="rect" id="node37" href="tables/name_link.html" target="_top" title="name_link" alt="" coords="2308,8373,2489,8496">
+<area shape="rect" id="node98" href="tables/form_schema.html" target="_top" title="form_schema" alt="" coords="2293,11685,2505,11867">
+<area shape="rect" id="node18" href="tables/migration_fragment_log.html" target="_top" title="migration_fragment_log" alt="" coords="6453,8773,6771,8896">
+<area shape="rect" id="node19" href="tables/indicator_line.html" target="_top" title="indicator_line" alt="" coords="3445,11268,3699,11596">
+<area shape="rect" id="node20" href="tables/purchase_order_line.html" target="_top" title="purchase_order_line" alt="" coords="3393,3500,3751,4151">
+<area shape="rect" id="node27" href="tables/purchase_order.html" target="_top" title="purchase_order" alt="" coords="2958,6536,3299,7597">
+<area shape="rect" id="node21" href="tables/sensor.html" target="_top" title="sensor" alt="" coords="3423,4468,3721,4825">
+<area shape="rect" id="node22" href="tables/period_schedule.html" target="_top" title="period_schedule" alt="" coords="2277,10328,2520,10451">
+<area shape="rect" id="node23" href="tables/changelog_p_1.html" target="_top" title="changelog_p_1" alt="" coords="6040,2947,6267,3275">
+<area shape="rect" id="node24" href="tables/user_permission.html" target="_top" title="user_permission" alt="" coords="3007,8107,3250,8317">
+<area shape="rect" id="node25" href="tables/item.html" target="_top" title="item" alt="" coords="2589,1171,2900,1704">
+<area shape="rect" id="node79" href="tables/unit.html" target="_top" title="unit" alt="" coords="2319,1259,2478,1469">
+<area shape="rect" id="node127" href="tables/location_type.html" target="_top" title="location_type" alt="" coords="2288,1603,2509,1784">
+<area shape="rect" id="node26" href="tables/temperature_breach.html" target="_top" title="temperature_breach" alt="" coords="3831,4149,4195,4595">
+<area shape="rect" id="node115" href="tables/currency.html" target="_top" title="currency" alt="" coords="1659,9459,1880,9699">
+<area shape="rect" id="node28" href="tables/item_category_join.html" target="_top" title="item_category_join" alt="" coords="3439,3265,3705,3447">
+<area shape="rect" id="node41" href="tables/category.html" target="_top" title="category" alt="" coords="3019,5359,3239,5569">
+<area shape="rect" id="node29" href="tables/preference.html" target="_top" title="preference" alt="" coords="3033,3032,3224,3213">
+<area shape="rect" id="node59" href="tables/master_list.html" target="_top" title="master_list" alt="" coords="2273,11281,2525,11551">
+<area shape="rect" id="node31" href="tables/stocktake_line.html" target="_top" title="stocktake_line" alt="" coords="4665,3195,4981,3963">
+<area shape="rect" id="node46" href="tables/campaign.html" target="_top" title="campaign" alt="" coords="3462,4240,3682,4451">
+<area shape="rect" id="node68" href="tables/reason_option.html" target="_top" title="reason_option" alt="" coords="3018,4844,3239,5025">
+<area shape="rect" id="node92" href="tables/item_variant.html" target="_top" title="item_variant" alt="" coords="3445,1048,3699,1376">
+<area shape="rect" id="node103" href="tables/stocktake.html" target="_top" title="stocktake" alt="" coords="4294,7271,4566,7833">
+<area shape="rect" id="node32" href="tables/changelog_p_30000001.html" target="_top" title="changelog_p_30000001" alt="" coords="6288,5757,6599,6085">
+<area shape="rect" id="node34" href="tables/store_preference.html" target="_top" title="store_preference" alt="" coords="5709,3397,6393,4019">
+<area shape="rect" id="node35" href="tables/rnr_form.html" target="_top" title="rnr_form" alt="" coords="3004,8716,3253,9103">
+<area shape="rect" id="node93" href="tables/period.html" target="_top" title="period" alt="" coords="2627,9691,2862,9901">
+<area shape="rect" id="node36" href="tables/indicator_column.html" target="_top" title="indicator_column" alt="" coords="3445,11613,3699,11883">
+<area shape="rect" id="node90" href="tables/name.html" target="_top" title="name" alt="" coords="1924,8403,2208,9581">
+<area shape="rect" id="node38" href="tables/changelog_p_20000001.html" target="_top" title="changelog_p_20000001" alt="" coords="6288,6253,6599,6581">
+<area shape="rect" id="node39" href="tables/sync_buffer_archive.html" target="_top" title="sync_buffer_archive" alt="" coords="749,4749,1084,5341">
+<area shape="rect" id="node40" href="tables/invoice_line.html" target="_top" title="invoice_line" alt="" coords="4239,1357,4621,2507">
+<area shape="rect" id="node88" href="tables/invoice.html" target="_top" title="invoice" alt="" coords="3835,7623,4191,8948">
+<area shape="rect" id="node109" href="tables/vvm_status.html" target="_top" title="vvm_status" alt="" coords="3475,2620,3669,2889">
+<area shape="rect" id="node42" href="tables/demographic_projection.html" target="_top" title="demographic_projection" alt="" coords="419,7056,737,7325">
+<area shape="rect" id="node43" href="tables/program_requisition_order_type.html" target="_top" title="program_requisition_order_type" alt="" coords="3374,10564,3770,10863">
+<area shape="rect" id="node102" href="tables/program_requisition_settings.html" target="_top" title="program_requisition_settings" alt="" coords="2944,10640,3313,10821">
+<area shape="rect" id="node44" href="tables/system_log.html" target="_top" title="system_log" alt="" coords="88,5597,280,5837">
+<area shape="rect" id="node45" href="tables/location_movement.html" target="_top" title="location_movement" alt="" coords="4293,3299,4567,3539">
+<area shape="rect" id="node47" href="tables/site.html" target="_top" title="site" alt="" coords="6288,6685,6585,7160">
+<area shape="rect" id="node48" href="tables/frontend_plugin.html" target="_top" title="frontend_plugin" alt="" coords="6371,3035,6609,3275">
+<area shape="rect" id="node49" href="tables/vaccine_course_item.html" target="_top" title="vaccine_course_item" alt="" coords="3430,6356,3714,6537">
+<area shape="rect" id="node119" href="tables/vaccine_course.html" target="_top" title="vaccine_course" alt="" coords="2983,10967,3274,11295">
+<area shape="rect" id="node50" href="tables/asset_internal_location.html" target="_top" title="asset_internal_location" alt="" coords="3418,5,3726,157">
+<area shape="rect" id="node51" href="tables/asset.html" target="_top" title="asset" alt="" coords="2986,203,3271,853">
+<area shape="rect" id="node76" href="tables/asset_category.html" target="_top" title="asset_category" alt="" coords="1951,324,2181,476">
+<area shape="rect" id="node113" href="tables/asset_catalogue_item.html" target="_top" title="asset_catalogue_item" alt="" coords="2598,56,2891,413">
+<area shape="rect" id="node125" href="tables/asset_catalogue_type.html" target="_top" title="asset_catalogue_type" alt="" coords="2252,265,2545,417">
+<area shape="rect" id="node52" href="tables/vaccine_course_store_config.html" target="_top" title="vaccine_course_store_config" alt="" coords="3393,10264,3751,10475">
+<area shape="rect" id="node53" href="tables/temperature_breach_config.html" target="_top" title="temperature_breach_config" alt="" coords="2953,3339,3305,3637">
+<area shape="rect" id="node54" href="tables/vaccine_course_dose.html" target="_top" title="vaccine_course_dose" alt="" coords="3429,10952,3715,11251">
+<area shape="rect" id="node55" href="tables/shipping_method.html" target="_top" title="shipping_method" alt="" coords="3447,10059,3697,10211">
+<area shape="rect" id="node56" href="tables/rnr_form_line.html" target="_top" title="rnr_form_line" alt="" coords="3357,5257,3787,6055">
+<area shape="rect" id="node58" href="tables/name_property.html" target="_top" title="name_property" alt="" coords="907,6507,1137,6659">
+<area shape="rect" id="node82" href="tables/property.html" target="_top" title="property" alt="" coords="667,6536,863,6747">
+<area shape="rect" id="node60" href="tables/contact.html" target="_top" title="contact" alt="" coords="2658,9127,2831,9601">
+<area shape="rect" id="node61" href="tables/sync_log.html" target="_top" title="sync_log" alt="" coords="5296,7232,5671,8235">
+<area shape="rect" id="node62" href="tables/contact_trace.html" target="_top" title="contact_trace" alt="" coords="2993,9120,3265,9565">
+<area shape="rect" id="node63" href="tables/barcode.html" target="_top" title="barcode" alt="" coords="3002,1223,3255,1492">
+<area shape="rect" id="node64" href="tables/ancillary_item.html" target="_top" title="ancillary_item" alt="" coords="3444,755,3700,995">
+<area shape="rect" id="node65" href="tables/packaging_variant.html" target="_top" title="packaging_variant" alt="" coords="3881,807,4144,1076">
+<area shape="rect" id="node66" href="tables/requisition.html" target="_top" title="requisition" alt="" coords="2963,2116,3295,2943">
+<area shape="rect" id="node69" href="tables/name_insurance_join.html" target="_top" title="name_insurance_join" alt="" coords="3429,9549,3715,9965">
+<area shape="rect" id="node70" href="tables/master_list_line.html" target="_top" title="master_list_line" alt="" coords="3454,7028,3690,7209">
+<area shape="rect" id="node72" href="tables/asset_property.html" target="_top" title="asset_property" alt="" coords="6453,7936,6683,8235">
+<area shape="rect" id="node73" href="tables/user_account.html" target="_top" title="user_account" alt="" coords="2621,7752,2869,8139">
+<area shape="rect" id="node74" href="tables/custom_field_scope.html" target="_top" title="custom_field_scope" alt="" coords="5977,5379,6249,5589">
+<area shape="rect" id="node75" href="tables/diagnosis.html" target="_top" title="diagnosis" alt="" coords="3484,8415,3660,8625">
+<area shape="rect" id="node77" href="tables/help_document.html" target="_top" title="help_document" alt="" coords="832,7723,1064,7904">
+<area shape="rect" id="node78" href="tables/number.html" target="_top" title="number" alt="" coords="3049,3655,3208,3836">
+<area shape="rect" id="node80" href="tables/asset_log.html" target="_top" title="asset_log" alt="" coords="3462,175,3682,503">
+<area shape="rect" id="node94" href="tables/asset_log_reason.html" target="_top" title="asset_log_reason" alt="" coords="3004,871,3253,1081">
+<area shape="rect" id="node81" href="tables/contact_form.html" target="_top" title="contact_form" alt="" coords="3019,3853,3239,4152">
+<area shape="rect" id="node83" href="tables/bundled_item.html" target="_top" title="bundled_item" alt="" coords="3867,1093,4159,1304">
+<area shape="rect" id="node84" href="tables/key_value_store.html" target="_top" title="key_value_store" alt="" coords="6453,8408,6692,8648">
+<area shape="rect" id="node85" href="tables/name_tag.html" target="_top" title="name_tag" alt="" coords="2655,10473,2834,10596">
+<area shape="rect" id="node86" href="tables/user_store_join.html" target="_top" title="user_store_join" alt="" coords="3013,7872,3244,8053">
+<area shape="rect" id="node87" href="tables/sync_file_reference.html" target="_top" title="sync_file_reference" alt="" coords="5544,8392,5815,8896">
+<area shape="rect" id="node89" href="tables/warning.html" target="_top" title="warning" alt="" coords="3041,5587,3217,5739">
+<area shape="rect" id="node91" href="tables/requisition_line.html" target="_top" title="requisition_line" alt="" coords="3396,1717,3748,2603">
+<area shape="rect" id="node95" href="tables/program_enrolment.html" target="_top" title="program_enrolment" alt="" coords="2991,8371,3267,8699">
+<area shape="rect" id="node96" href="tables/plugin_data.html" target="_top" title="plugin_data" alt="" coords="3019,4205,3238,4475">
+<area shape="rect" id="node97" href="tables/activity_log.html" target="_top" title="activity_log" alt="" coords="3031,4492,3226,4791">
+<area shape="rect" id="node100" href="tables/indicator_value.html" target="_top" title="indicator_value" alt="" coords="3875,10423,4150,10692">
+<area shape="rect" id="node101" href="tables/sync_request.html" target="_top" title="sync_request" alt="" coords="88,3667,312,3936">
+<area shape="rect" id="node104" href="tables/__diesel_schema_migrations.html" target="_top" title="__diesel_schema_migrations" alt="" coords="6619,7699,6975,7821">
+<area shape="rect" id="node105" href="tables/document_registry.html" target="_top" title="document_registry" alt="" coords="2611,11539,2878,11808">
+<area shape="rect" id="node106" href="tables/item_warning_join.html" target="_top" title="item_warning_join" alt="" coords="3442,4915,3702,5096">
+<area shape="rect" id="node107" href="tables/temperature_log.html" target="_top" title="temperature_log" alt="" coords="4293,3876,4567,4145">
+<area shape="rect" id="node108" href="tables/changelog_p_10000001.html" target="_top" title="changelog_p_10000001" alt="" coords="419,3525,729,3853">
+<area shape="rect" id="node110" href="tables/vvm_status_log.html" target="_top" title="vvm_status_log" alt="" coords="4707,2829,4940,3128">
+<area shape="rect" id="node111" href="tables/item_direction.html" target="_top" title="item_direction" alt="" coords="3460,520,3684,701">
+<area shape="rect" id="node112" href="tables/sync_log_v7.html" target="_top" title="sync_log_v7" alt="" coords="5709,5712,6139,6333">
+<area shape="rect" id="node114" href="tables/name_tag_join.html" target="_top" title="name_tag_join" alt="" coords="3017,9655,3240,9807">
+<area shape="rect" id="node116" href="tables/sync_buffer_pending.html" target="_top" title="sync_buffer_pending" alt="" coords="749,4005,1084,4597">
+<area shape="rect" id="node117" href="tables/encounter.html" target="_top" title="encounter" alt="" coords="3019,9824,3239,10211">
+<area shape="rect" id="node118" href="tables/master_list_name_join.html" target="_top" title="master_list_name_join" alt="" coords="2595,10613,2894,10765">
+<area shape="rect" id="node120" href="tables/vaccination.html" target="_top" title="vaccination" alt="" coords="3873,10805,4152,11427">
+<area shape="rect" id="node122" href="tables/sync_message.html" target="_top" title="sync_message" alt="" coords="3017,5043,3240,5341">
+<area shape="rect" id="node123" href="tables/report.html" target="_top" title="report" alt="" coords="2612,12031,2877,12447">
+<area shape="rect" id="node124" href="tables/program_event.html" target="_top" title="program_event" alt="" coords="2615,10063,2875,10420">
+<area shape="rect" id="node126" href="tables/backend_plugin.html" target="_top" title="backend_plugin" alt="" coords="336,8821,572,9061">
+<area shape="rect" id="node128" href="tables/name_store_join.html" target="_top" title="name_store_join" alt="" coords="3008,7615,3249,7855">
+<area shape="rect" id="node129" href="tables/printer.html" target="_top" title="printer" alt="" coords="88,3283,256,3523">
+<area shape="rect" id="node130" href="tables/name_store_join_view.html" target="_top" title="name_store_join_view" alt="" coords="253,8403,545,8648">
+<area shape="rect" id="node131" href="tables/rnr_form_view.html" target="_top" title="rnr_form_view" alt="" coords="336,5941,585,6333">
+<area shape="rect" id="node132" href="tables/stocktake_line_view.html" target="_top" title="stocktake_line_view" alt="" coords="1245,4509,1561,5341">
+<area shape="rect" id="node133" href="tables/contact_view.html" target="_top" title="contact_view" alt="" coords="5213,8333,5421,8813">
+<area shape="rect" id="node134" href="tables/vaccination_course.html" target="_top" title="vaccination_course" alt="" coords="1245,6771,1524,7573">
+<area shape="rect" id="node135" href="tables/inventory_adjustment_stock_movement.html" target="_top" title="inventory_adjustment_stock_movement" alt="" coords="6288,9040,6756,9227">
+<area shape="rect" id="node136" href="tables/ancillary_item_view.html" target="_top" title="ancillary_item_view" alt="" coords="6536,3413,6807,3688">
+<area shape="rect" id="node137" href="tables/report_program_enrolment.html" target="_top" title="report_program_enrolment" alt="" coords="5792,9064,6136,9309">
+<area shape="rect" id="node138" href="tables/purchase_order_line_view.html" target="_top" title="purchase_order_line_view" alt="" coords="5792,6475,6151,7160">
+<area shape="rect" id="node139" href="tables/encounter_view.html" target="_top" title="encounter_view" alt="" coords="419,5445,652,5837">
+<area shape="rect" id="node140" href="tables/item_ledger.html" target="_top" title="item_ledger" alt="" coords="832,3139,1075,3853">
+<area shape="rect" id="node141" href="tables/invoice_stats.html" target="_top" title="invoice_stats" alt="" coords="5296,9005,5660,9309">
+<area shape="rect" id="node142" href="tables/contact_trace_name_link_view.html" target="_top" title="contact_trace_name_link_view" alt="" coords="667,8640,1040,9061">
+<area shape="rect" id="node143" href="tables/outbound_shipment_stock_movement.html" target="_top" title="outbound_shipment_stock_movement" alt="" coords="1080,9205,1528,9392">
+<area shape="rect" id="node144" href="tables/inbound_shipment_stock_movement.html" target="_top" title="inbound_shipment_stock_movement" alt="" coords="501,9205,935,9392">
+<area shape="rect" id="node145" href="tables/stock_line_ledger.html" target="_top" title="stock_line_ledger" alt="" coords="5792,7296,6041,8069">
+<area shape="rect" id="node146" href="tables/master_list_line_view.html" target="_top" title="master_list_line_view" alt="" coords="6701,6395,6988,6581">
+<area shape="rect" id="node147" href="tables/latest_document.html" target="_top" title="latest_document" alt="" coords="419,2936,661,3357">
+<area shape="rect" id="node148" href="tables/stock_line_ledger_discrepancy.html" target="_top" title="stock_line_ledger_discrepancy" alt="" coords="6123,9405,6497,9475">
+<area shape="rect" id="node149" href="tables/stock_movement.html" target="_top" title="stock_movement" alt="" coords="832,6859,1077,7573">
+<area shape="rect" id="node150" href="tables/invoice_view.html" target="_top" title="invoice_view" alt="" coords="5213,3155,5569,4515">
+<area shape="rect" id="node151" href="tables/purchase_order_stats.html" target="_top" title="purchase_order_stats" alt="" coords="5627,9429,5948,9557">
+<area shape="rect" id="node152" href="tables/indicator_value_view.html" target="_top" title="indicator_value_view" alt="" coords="253,6637,537,6912">
+<area shape="rect" id="node153" href="tables/stock_on_hand.html" target="_top" title="stock_on_hand" alt="" coords="6701,6696,6989,6912">
+<area shape="rect" id="node154" href="tables/barcode_view.html" target="_top" title="barcode_view" alt="" coords="6619,7299,6872,7573">
+<area shape="rect" id="node155" href="tables/item_category_join_view.html" target="_top" title="item_category_join_view" alt="" coords="1245,6477,1564,6664">
+<area shape="rect" id="node156" href="tables/consumption.html" target="_top" title="consumption" alt="" coords="88,2835,301,3109">
+<area shape="rect" id="node157" href="tables/program_enrolment_view.html" target="_top" title="program_enrolment_view" alt="" coords="6371,4677,6699,5011">
+<area shape="rect" id="node158" href="tables/report_patient.html" target="_top" title="report_patient" alt="" coords="171,9195,392,9557">
+<area shape="rect" id="node159" href="tables/store_view.html" target="_top" title="store_view" alt="" coords="88,7187,273,7491">
+<area shape="rect" id="node160" href="tables/vaccination_view.html" target="_top" title="vaccination_view" alt="" coords="749,5648,1028,6333">
+<area shape="rect" id="node161" href="tables/invoice_line_stock_movement.html" target="_top" title="invoice_line_stock_movement" alt="" coords="5957,8211,6340,8896">
+<area shape="rect" id="node162" href="tables/invoice_line_view.html" target="_top" title="invoice_line_view" alt="" coords="5213,4624,5596,5837">
+<area shape="rect" id="node163" href="tables/document_view.html" target="_top" title="document_view" alt="" coords="1245,2936,1488,3357">
+<area shape="rect" id="node164" href="tables/invoice_line_stats.html" target="_top" title="invoice_line_stats" alt="" coords="749,5437,1001,5507">
+<area shape="rect" id="node165" href="tables/name_insurance_join_view.html" target="_top" title="name_insurance_join_view" alt="" coords="667,8061,1004,8483">
+<area shape="rect" id="node166" href="tables/report_document.html" target="_top" title="report_document" alt="" coords="5213,9453,5461,9640">
+<area shape="rect" id="node167" href="tables/item_store_join_view.html" target="_top" title="item_store_join_view" alt="" coords="336,5067,651,5341">
+<area shape="rect" id="node168" href="tables/program_event_view.html" target="_top" title="program_event_view" alt="" coords="336,4565,619,4928">
+<area shape="rect" id="node169" href="tables/purchase_order_view.html" target="_top" title="purchase_order_view" alt="" coords="5213,5981,5555,7077">
+<area shape="rect" id="node170" href="tables/vaccine_course_item_view.html" target="_top" title="vaccine_course_item_view" alt="" coords="6536,3832,6871,4019">
+<area shape="rect" id="node171" href="tables/vaccination_card.html" target="_top" title="vaccination_card" alt="" coords="6205,7283,6484,7821">
+<area shape="rect" id="node172" href="tables/stock_line_view.html" target="_top" title="stock_line_view" alt="" coords="1245,3488,1560,4349">
+<area shape="rect" id="node173" href="tables/requisitions_in_period.html" target="_top" title="requisitions_in_period" alt="" coords="88,7960,383,8235">
+<area shape="rect" id="node174" href="tables/store_stock_on_hand.html" target="_top" title="store_stock_on_hand" alt="" coords="1245,9507,1533,9723">
+<area shape="rect" id="node175" href="tables/report_program_event.html" target="_top" title="report_program_event" alt="" coords="832,2723,1131,3027">
+<area shape="rect" id="node176" href="tables/master_list_name_join_view.html" target="_top" title="master_list_name_join_view" alt="" coords="6619,9400,6968,9557">
+<area shape="rect" id="node177" href="tables/report_store.html" target="_top" title="report_store" alt="" coords="5,8875,207,9061">
+<area shape="rect" id="node178" href="tables/rnr_form_line_view.html" target="_top" title="rnr_form_line_view" alt="" coords="5709,4125,6139,4928">
+<area shape="rect" id="node179" href="tables/item_warning_join_view.html" target="_top" title="item_warning_join_view" alt="" coords="88,7635,399,7821">
+<area shape="rect" id="node180" href="tables/latest_asset_log.html" target="_top" title="latest_asset_log" alt="" coords="5213,2723,5451,3027">
+<area shape="rect" id="node181" href="tables/item_variant_view.html" target="_top" title="item_variant_view" alt="" coords="336,4069,593,4432">
+<area shape="rect" id="node182" href="tables/store_items.html" target="_top" title="store_items" alt="" coords="6701,4163,7016,4349">
+<area shape="rect" id="node183" href="tables/purchase_order_line_stats.html" target="_top" title="purchase_order_line_stats" alt="" coords="6701,5680,7036,5837">
+<area shape="rect" id="node184" href="tables/name_tag_join_view.html" target="_top" title="name_tag_join_view" alt="" coords="832,9565,1107,9723">
+<area shape="rect" id="node185" href="tables/replenishment.html" target="_top" title="replenishment" alt="" coords="5,6312,228,6499">
+<area shape="rect" id="node186" href="tables/report_encounter.html" target="_top" title="report_encounter" alt="" coords="6701,5947,6952,6251">
+<area shape="rect" id="node187" href="tables/requisition_view.html" target="_top" title="requisition_view" alt="" coords="1163,7704,1495,8565">
+<area shape="rect" id="node188" href="tables/item_direction_view.html" target="_top" title="item_direction_view" alt="" coords="6784,2757,7059,2944">
+<area shape="rect" id="node189" href="tables/requisition_line_view.html" target="_top" title="requisition_line_view" alt="" coords="1163,5443,1515,6333">
+<area shape="rect" id="node190" href="tables/adjustments.html" target="_top" title="adjustments" alt="" coords="5,5981,208,6168">
+<area shape="rect" id="node191" href="tables/changelog_view.html" target="_top" title="changelog_view" alt="" coords="5709,2941,5945,3275">
+</map>
+                                        <a name='diagram'><img id="largeDegreeImg" src="diagrams/summary/relationships.real.large.png" usemap="#largeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="compactimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="compactImpliedRelationshipsDiagram" name="compactImpliedRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/item_store_join.html" target="_top" title="item_store_join" alt="" coords="2596,5175,2911,5380">
+<area shape="rect" id="node33" href="tables/location.html" target="_top" title="location" alt="" coords="2207,5501,2413,5677">
+<area shape="rect" id="node57" href="tables/store.html" target="_top" title="store" alt="" coords="1826,5871,2002,6047">
+<area shape="rect" id="node67" href="tables/item_link.html" target="_top" title="item_link" alt="" coords="2224,4391,2396,4513">
+<area shape="rect" id="node2" href="tables/changelog_p_5000001.html" target="_top" title="changelog_p_5000001" alt="" coords="1765,9593,2063,9857">
+<area shape="rect" id="node47" href="tables/site.html" target="_top" title="site" alt="" coords="1405,9179,1703,9296">
+<area shape="rect" id="node3" href="tables/changelog_p_25000001.html" target="_top" title="changelog_p_25000001" alt="" coords="1759,9875,2069,10139">
+<area shape="rect" id="node4" href="tables/email_queue.html" target="_top" title="email_queue" alt="" coords="445,3239,651,3356">
+<area shape="rect" id="node5" href="tables/changelog_p_15000001.html" target="_top" title="changelog_p_15000001" alt="" coords="1759,10156,2069,10420">
+<area shape="rect" id="node6" href="tables/custom_field.html" target="_top" title="custom_field" alt="" coords="4332,3333,4552,3480">
+<area shape="rect" id="node7" href="tables/stock_relocation.html" target="_top" title="stock_relocation" alt="" coords="3475,5581,3747,5845">
+<area shape="rect" id="node99" href="tables/stock_line.html" target="_top" title="stock_line" alt="" coords="3037,4244,3351,4772">
+<area shape="rect" id="node8" href="tables/context.html" target="_top" title="context" alt="" coords="1475,819,1633,936">
+<area shape="rect" id="node9" href="tables/clinician_link.html" target="_top" title="clinician_link" alt="" coords="2649,5987,2857,6109">
+<area shape="rect" id="node121" href="tables/clinician.html" target="_top" title="clinician" alt="" coords="2212,5695,2408,5841">
+<area shape="rect" id="node10" href="tables/custom_field_option.html" target="_top" title="custom_field_option" alt="" coords="4596,3207,4875,3383">
+<area shape="rect" id="node11" href="tables/abbreviation.html" target="_top" title="abbreviation" alt="" coords="4699,7052,4907,7169">
+<area shape="rect" id="node12" href="tables/demographic_indicator.html" target="_top" title="demographic_indicator" alt="" coords="2157,540,2463,687">
+<area shape="rect" id="node71" href="tables/demographic.html" target="_top" title="demographic" alt="" coords="1777,560,2051,677">
+<area shape="rect" id="node13" href="tables/insurance_provider.html" target="_top" title="insurance_provider" alt="" coords="2159,1084,2461,1201">
+<area shape="rect" id="node14" href="tables/asset_class.html" target="_top" title="asset_class" alt="" coords="826,7707,1019,7829">
+<area shape="rect" id="node15" href="tables/clinician_store_join.html" target="_top" title="clinician_store_join" alt="" coords="3060,6107,3328,6283">
+<area shape="rect" id="node16" href="tables/program_indicator.html" target="_top" title="program_indicator" alt="" coords="2179,812,2441,959">
+<area shape="rect" id="node30" href="tables/program.html" target="_top" title="program" alt="" coords="1804,1284,2024,1460">
+<area shape="rect" id="node17" href="tables/document.html" target="_top" title="document" alt="" coords="1793,731,2035,965">
+<area shape="rect" id="node37" href="tables/name_link.html" target="_top" title="name_link" alt="" coords="1463,2857,1645,2980">
+<area shape="rect" id="node98" href="tables/form_schema.html" target="_top" title="form_schema" alt="" coords="1448,255,1660,372">
+<area shape="rect" id="node18" href="tables/migration_fragment_log.html" target="_top" title="migration_fragment_log" alt="" coords="4332,6392,4649,6509">
+<area shape="rect" id="node19" href="tables/indicator_line.html" target="_top" title="indicator_line" alt="" coords="2626,812,2881,959">
+<area shape="rect" id="node20" href="tables/purchase_order_line.html" target="_top" title="purchase_order_line" alt="" coords="2574,3405,2933,3669">
+<area shape="rect" id="node27" href="tables/purchase_order.html" target="_top" title="purchase_order" alt="" coords="2139,3435,2481,3669">
+<area shape="rect" id="node21" href="tables/sensor.html" target="_top" title="sensor" alt="" coords="2605,6235,2902,6411">
+<area shape="rect" id="node22" href="tables/period_schedule.html" target="_top" title="period_schedule" alt="" coords="1433,1307,1675,1424">
+<area shape="rect" id="node23" href="tables/changelog_p_1.html" target="_top" title="changelog_p_1" alt="" coords="1801,10437,2027,10701">
+<area shape="rect" id="node24" href="tables/user_permission.html" target="_top" title="user_permission" alt="" coords="2189,1448,2431,1653">
+<area shape="rect" id="node25" href="tables/item.html" target="_top" title="item" alt="" coords="1759,4355,2069,4589">
+<area shape="rect" id="node79" href="tables/unit.html" target="_top" title="unit" alt="" coords="1475,4384,1633,4531">
+<area shape="rect" id="node127" href="tables/location_type.html" target="_top" title="location_type" alt="" coords="1443,4585,1665,4703">
+<area shape="rect" id="node26" href="tables/temperature_breach.html" target="_top" title="temperature_breach" alt="" coords="3012,6300,3376,6505">
+<area shape="rect" id="node115" href="tables/currency.html" target="_top" title="currency" alt="" coords="812,3033,1033,3151">
+<area shape="rect" id="node28" href="tables/item_category_join.html" target="_top" title="item_category_join" alt="" coords="2620,4981,2887,5157">
+<area shape="rect" id="node41" href="tables/category.html" target="_top" title="category" alt="" coords="2200,5011,2420,5128">
+<area shape="rect" id="node29" href="tables/preference.html" target="_top" title="preference" alt="" coords="2215,5895,2405,6041">
+<area shape="rect" id="node59" href="tables/master_list.html" target="_top" title="master_list" alt="" coords="1428,4143,1680,4260">
+<area shape="rect" id="node31" href="tables/stocktake_line.html" target="_top" title="stocktake_line" alt="" coords="3847,2429,4163,2811">
+<area shape="rect" id="node46" href="tables/campaign.html" target="_top" title="campaign" alt="" coords="2643,4453,2863,4571">
+<area shape="rect" id="node68" href="tables/reason_option.html" target="_top" title="reason_option" alt="" coords="2199,3228,2421,3345">
+<area shape="rect" id="node92" href="tables/item_variant.html" target="_top" title="item_variant" alt="" coords="2627,4060,2880,4265">
+<area shape="rect" id="node103" href="tables/stocktake.html" target="_top" title="stocktake" alt="" coords="3475,1437,3747,1731">
+<area shape="rect" id="node32" href="tables/changelog_p_30000001.html" target="_top" title="changelog_p_30000001" alt="" coords="1759,7889,2069,8153">
+<area shape="rect" id="node34" href="tables/store_preference.html" target="_top" title="store_preference" alt="" coords="4332,3679,5016,3796">
+<area shape="rect" id="node35" href="tables/rnr_form.html" target="_top" title="rnr_form" alt="" coords="2185,1929,2435,2164">
+<area shape="rect" id="node93" href="tables/period.html" target="_top" title="period" alt="" coords="1797,1629,2031,1776">
+<area shape="rect" id="node36" href="tables/indicator_column.html" target="_top" title="indicator_column" alt="" coords="2626,976,2881,1123">
+<area shape="rect" id="node90" href="tables/name.html" target="_top" title="name" alt="" coords="1077,2887,1361,3151">
+<area shape="rect" id="node38" href="tables/changelog_p_20000001.html" target="_top" title="changelog_p_20000001" alt="" coords="1759,8171,2069,8435">
+<area shape="rect" id="node39" href="tables/sync_buffer_archive.html" target="_top" title="sync_buffer_archive" alt="" coords="1747,8452,2081,8628">
+<area shape="rect" id="node40" href="tables/invoice_line.html" target="_top" title="invoice_line" alt="" coords="3420,3709,3803,4267">
+<area shape="rect" id="node88" href="tables/invoice.html" target="_top" title="invoice" alt="" coords="3016,1555,3372,2288">
+<area shape="rect" id="node109" href="tables/vvm_status.html" target="_top" title="vvm_status" alt="" coords="2657,4319,2850,4436">
+<area shape="rect" id="node42" href="tables/demographic_projection.html" target="_top" title="demographic_projection" alt="" coords="4332,6612,4651,6729">
+<area shape="rect" id="node43" href="tables/program_requisition_order_type.html" target="_top" title="program_requisition_order_type" alt="" coords="2555,312,2951,459">
+<area shape="rect" id="node102" href="tables/program_requisition_settings.html" target="_top" title="program_requisition_settings" alt="" coords="2125,341,2495,523">
+<area shape="rect" id="node44" href="tables/system_log.html" target="_top" title="system_log" alt="" coords="1818,8645,2010,8792">
+<area shape="rect" id="node45" href="tables/location_movement.html" target="_top" title="location_movement" alt="" coords="3475,5893,3748,6099">
+<area shape="rect" id="node48" href="tables/frontend_plugin.html" target="_top" title="frontend_plugin" alt="" coords="4699,7492,4937,7609">
+<area shape="rect" id="node49" href="tables/vaccine_course_item.html" target="_top" title="vaccine_course_item" alt="" coords="2611,2767,2895,2943">
+<area shape="rect" id="node119" href="tables/vaccine_course.html" target="_top" title="vaccine_course" alt="" coords="2165,1255,2455,1431">
+<area shape="rect" id="node50" href="tables/asset_internal_location.html" target="_top" title="asset_internal_location" alt="" coords="2599,7605,2907,7757">
+<area shape="rect" id="node51" href="tables/asset.html" target="_top" title="asset" alt="" coords="2167,7605,2453,7987">
+<area shape="rect" id="node76" href="tables/asset_category.html" target="_top" title="asset_category" alt="" coords="1104,7648,1335,7800">
+<area shape="rect" id="node113" href="tables/asset_catalogue_item.html" target="_top" title="asset_catalogue_item" alt="" coords="1767,7472,2061,7707">
+<area shape="rect" id="node125" href="tables/asset_catalogue_type.html" target="_top" title="asset_catalogue_type" alt="" coords="1407,7612,1701,7764">
+<area shape="rect" id="node52" href="tables/vaccine_course_store_config.html" target="_top" title="vaccine_course_store_config" alt="" coords="2574,2321,2933,2497">
+<area shape="rect" id="node53" href="tables/temperature_breach_config.html" target="_top" title="temperature_breach_config" alt="" coords="2134,6193,2486,6340">
+<area shape="rect" id="node54" href="tables/vaccine_course_dose.html" target="_top" title="vaccine_course_dose" alt="" coords="2611,1140,2896,1287">
+<area shape="rect" id="node55" href="tables/shipping_method.html" target="_top" title="shipping_method" alt="" coords="2628,2151,2879,2268">
+<area shape="rect" id="node56" href="tables/rnr_form_line.html" target="_top" title="rnr_form_line" alt="" coords="2539,2960,2968,3136">
+<area shape="rect" id="node58" href="tables/name_property.html" target="_top" title="name_property" alt="" coords="4572,3943,4803,4089">
+<area shape="rect" id="node82" href="tables/property.html" target="_top" title="property" alt="" coords="4332,3972,4528,4089">
+<area shape="rect" id="node60" href="tables/contact.html" target="_top" title="contact" alt="" coords="1827,1945,2001,2092">
+<area shape="rect" id="node61" href="tables/sync_log.html" target="_top" title="sync_log" alt="" coords="4332,5072,4707,5189">
+<area shape="rect" id="node62" href="tables/contact_trace.html" target="_top" title="contact_trace" alt="" coords="2174,2253,2446,2517">
+<area shape="rect" id="node63" href="tables/barcode.html" target="_top" title="barcode" alt="" coords="2183,3723,2437,3928">
+<area shape="rect" id="node64" href="tables/ancillary_item.html" target="_top" title="ancillary_item" alt="" coords="2625,4588,2881,4764">
+<area shape="rect" id="node65" href="tables/packaging_variant.html" target="_top" title="packaging_variant" alt="" coords="3063,3936,3325,4083">
+<area shape="rect" id="node66" href="tables/requisition.html" target="_top" title="requisition" alt="" coords="2144,2607,2476,2988">
+<area shape="rect" id="node69" href="tables/name_insurance_join.html" target="_top" title="name_insurance_join" alt="" coords="2610,1511,2897,1687">
+<area shape="rect" id="node70" href="tables/master_list_line.html" target="_top" title="master_list_line" alt="" coords="2635,3831,2871,4007">
+<area shape="rect" id="node72" href="tables/asset_property.html" target="_top" title="asset_property" alt="" coords="4332,7492,4561,7609">
+<area shape="rect" id="node73" href="tables/user_account.html" target="_top" title="user_account" alt="" coords="1790,10719,2038,10836">
+<area shape="rect" id="node74" href="tables/custom_field_scope.html" target="_top" title="custom_field_scope" alt="" coords="4599,3400,4871,3576">
+<area shape="rect" id="node75" href="tables/diagnosis.html" target="_top" title="diagnosis" alt="" coords="2665,1340,2841,1457">
+<area shape="rect" id="node77" href="tables/help_document.html" target="_top" title="help_document" alt="" coords="225,3019,457,3136">
+<area shape="rect" id="node78" href="tables/number.html" target="_top" title="number" alt="" coords="2231,6357,2389,6533">
+<area shape="rect" id="node80" href="tables/asset_log.html" target="_top" title="asset_log" alt="" coords="2643,7860,2863,8065">
+<area shape="rect" id="node94" href="tables/asset_log_reason.html" target="_top" title="asset_log_reason" alt="" coords="2185,8004,2435,8121">
+<area shape="rect" id="node81" href="tables/contact_form.html" target="_top" title="contact_form" alt="" coords="2200,6551,2420,6697">
+<area shape="rect" id="node83" href="tables/bundled_item.html" target="_top" title="bundled_item" alt="" coords="3048,3743,3340,3919">
+<area shape="rect" id="node84" href="tables/key_value_store.html" target="_top" title="key_value_store" alt="" coords="4772,6172,5011,6289">
+<area shape="rect" id="node85" href="tables/name_tag.html" target="_top" title="name_tag" alt="" coords="1825,389,2003,507">
+<area shape="rect" id="node86" href="tables/user_store_join.html" target="_top" title="user_store_join" alt="" coords="2195,9412,2425,9588">
+<area shape="rect" id="node87" href="tables/sync_file_reference.html" target="_top" title="sync_file_reference" alt="" coords="4772,6392,5043,6509">
+<area shape="rect" id="node89" href="tables/warning.html" target="_top" title="warning" alt="" coords="2222,6059,2398,6176">
+<area shape="rect" id="node91" href="tables/requisition_line.html" target="_top" title="requisition_line" alt="" coords="2577,3153,2929,3388">
+<area shape="rect" id="node95" href="tables/program_enrolment.html" target="_top" title="program_enrolment" alt="" coords="2172,3005,2448,3211">
+<area shape="rect" id="node96" href="tables/plugin_data.html" target="_top" title="plugin_data" alt="" coords="2201,7317,2419,7552">
+<area shape="rect" id="node97" href="tables/activity_log.html" target="_top" title="activity_log" alt="" coords="2213,6859,2407,7035">
+<area shape="rect" id="node100" href="tables/indicator_value.html" target="_top" title="indicator_value" alt="" coords="3057,829,3331,1093">
+<area shape="rect" id="node101" href="tables/sync_request.html" target="_top" title="sync_request" alt="" coords="4772,6612,4996,6729">
+<area shape="rect" id="node104" href="tables/__diesel_schema_migrations.html" target="_top" title="__diesel_schema_migrations" alt="" coords="4332,5292,4688,5409">
+<area shape="rect" id="node105" href="tables/document_registry.html" target="_top" title="document_registry" alt="" coords="1781,196,2047,372">
+<area shape="rect" id="node106" href="tables/item_warning_join.html" target="_top" title="item_warning_join" alt="" coords="2623,5721,2883,5897">
+<area shape="rect" id="node107" href="tables/temperature_log.html" target="_top" title="temperature_log" alt="" coords="3474,6135,3749,6399">
+<area shape="rect" id="node108" href="tables/changelog_p_10000001.html" target="_top" title="changelog_p_10000001" alt="" coords="1759,8809,2069,9073">
+<area shape="rect" id="node110" href="tables/vvm_status_log.html" target="_top" title="vvm_status_log" alt="" coords="3888,4756,4121,4961">
+<area shape="rect" id="node111" href="tables/item_direction.html" target="_top" title="item_direction" alt="" coords="2641,4781,2865,4928">
+<area shape="rect" id="node112" href="tables/sync_log_v7.html" target="_top" title="sync_log_v7" alt="" coords="4332,4192,4761,4309">
+<area shape="rect" id="node114" href="tables/name_tag_join.html" target="_top" title="name_tag_join" alt="" coords="2199,172,2421,324">
+<area shape="rect" id="node116" href="tables/sync_buffer_pending.html" target="_top" title="sync_buffer_pending" alt="" coords="1747,9091,2081,9355">
+<area shape="rect" id="node117" href="tables/encounter.html" target="_top" title="encounter" alt="" coords="2200,1707,2420,1912">
+<area shape="rect" id="node118" href="tables/master_list_name_join.html" target="_top" title="master_list_name_join" alt="" coords="1765,4113,2063,4265">
+<area shape="rect" id="node120" href="tables/vaccination.html" target="_top" title="vaccination" alt="" coords="3055,1111,3333,1257">
+<area shape="rect" id="node122" href="tables/sync_message.html" target="_top" title="sync_message" alt="" coords="2199,7088,2421,7264">
+<area shape="rect" id="node123" href="tables/report.html" target="_top" title="report" alt="" coords="1781,32,2047,179">
+<area shape="rect" id="node124" href="tables/program_event.html" target="_top" title="program_event" alt="" coords="1784,983,2044,1159">
+<area shape="rect" id="node126" href="tables/backend_plugin.html" target="_top" title="backend_plugin" alt="" coords="4772,6832,5008,6949">
+<area shape="rect" id="node128" href="tables/name_store_join.html" target="_top" title="name_store_join" alt="" coords="2189,4053,2431,4229">
+<area shape="rect" id="node129" href="tables/printer.html" target="_top" title="printer" alt="" coords="79,5439,247,5556">
+<area shape="rect" id="node130" href="tables/name_store_join_view.html" target="_top" title="name_store_join_view" alt="" coords="4332,6885,4624,6949">
+<area shape="rect" id="node131" href="tables/rnr_form_view.html" target="_top" title="rnr_form_view" alt="" coords="445,7692,664,7756">
+<area shape="rect" id="node132" href="tables/stocktake_line_view.html" target="_top" title="stocktake_line_view" alt="" coords="4332,7105,4607,7169">
+<area shape="rect" id="node133" href="tables/contact_view.html" target="_top" title="contact_view" alt="" coords="152,7692,360,7756">
+<area shape="rect" id="node134" href="tables/vaccination_course.html" target="_top" title="vaccination_course" alt="" coords="4332,2999,4599,3063">
+<area shape="rect" id="node135" href="tables/inventory_adjustment_stock_movement.html" target="_top" title="inventory_adjustment_stock_movement" alt="" coords="4332,4465,4800,4529">
+<area shape="rect" id="node136" href="tables/ancillary_item_view.html" target="_top" title="ancillary_item_view" alt="" coords="4699,2999,4969,3063">
+<area shape="rect" id="node137" href="tables/report_program_enrolment.html" target="_top" title="report_program_enrolment" alt="" coords="4479,7325,4823,7389">
+<area shape="rect" id="node138" href="tables/purchase_order_line_view.html" target="_top" title="purchase_order_line_view" alt="" coords="372,7472,703,7536">
+<area shape="rect" id="node139" href="tables/encounter_view.html" target="_top" title="encounter_view" alt="" coords="4845,5125,5079,5189">
+<area shape="rect" id="node140" href="tables/item_ledger.html" target="_top" title="item_ledger" alt="" coords="79,5272,275,5336">
+<area shape="rect" id="node141" href="tables/invoice_stats.html" target="_top" title="invoice_stats" alt="" coords="152,3952,360,4016">
+<area shape="rect" id="node142" href="tables/contact_trace_name_link_view.html" target="_top" title="contact_trace_name_link_view" alt="" coords="4332,5565,4705,5629">
+<area shape="rect" id="node143" href="tables/outbound_shipment_stock_movement.html" target="_top" title="outbound_shipment_stock_movement" alt="" coords="4332,4685,4780,4749">
+<area shape="rect" id="node144" href="tables/inbound_shipment_stock_movement.html" target="_top" title="inbound_shipment_stock_movement" alt="" coords="4332,4905,4765,4969">
+<area shape="rect" id="node145" href="tables/stock_line_ledger.html" target="_top" title="stock_line_ledger" alt="" coords="4845,5345,5095,5409">
+<area shape="rect" id="node146" href="tables/master_list_line_view.html" target="_top" title="master_list_line_view" alt="" coords="372,7252,659,7316">
+<area shape="rect" id="node147" href="tables/latest_document.html" target="_top" title="latest_document" alt="" coords="4845,5565,5088,5629">
+<area shape="rect" id="node148" href="tables/stock_line_ledger_discrepancy.html" target="_top" title="stock_line_ledger_discrepancy" alt="" coords="4332,5785,4707,5849">
+<area shape="rect" id="node149" href="tables/stock_movement.html" target="_top" title="stock_movement" alt="" coords="4845,5785,5091,5849">
+<area shape="rect" id="node150" href="tables/invoice_view.html" target="_top" title="invoice_view" alt="" coords="152,3732,356,3796">
+<area shape="rect" id="node151" href="tables/purchase_order_stats.html" target="_top" title="purchase_order_stats" alt="" coords="372,7032,661,7096">
+<area shape="rect" id="node152" href="tables/indicator_value_view.html" target="_top" title="indicator_value_view" alt="" coords="372,6812,656,6876">
+<area shape="rect" id="node153" href="tables/stock_on_hand.html" target="_top" title="stock_on_hand" alt="" coords="4845,6005,5069,6069">
+<area shape="rect" id="node154" href="tables/barcode_view.html" target="_top" title="barcode_view" alt="" coords="79,3292,292,3356">
+<area shape="rect" id="node155" href="tables/item_category_join_view.html" target="_top" title="item_category_join_view" alt="" coords="372,6592,691,6656">
+<area shape="rect" id="node156" href="tables/consumption.html" target="_top" title="consumption" alt="" coords="79,7472,285,7536">
+<area shape="rect" id="node157" href="tables/program_enrolment_view.html" target="_top" title="program_enrolment_view" alt="" coords="372,6372,700,6436">
+<area shape="rect" id="node158" href="tables/report_patient.html" target="_top" title="report_patient" alt="" coords="4919,3952,5140,4016">
+<area shape="rect" id="node159" href="tables/store_view.html" target="_top" title="store_view" alt="" coords="1821,9372,2007,9465">
+<area shape="rect" id="node160" href="tables/vaccination_view.html" target="_top" title="vaccination_view" alt="" coords="4919,4172,5165,4236">
+<area shape="rect" id="node161" href="tables/invoice_line_stock_movement.html" target="_top" title="invoice_line_stock_movement" alt="" coords="4332,6005,4700,6069">
+<area shape="rect" id="node162" href="tables/invoice_line_view.html" target="_top" title="invoice_line_view" alt="" coords="4919,4392,5167,4456">
+<area shape="rect" id="node163" href="tables/document_view.html" target="_top" title="document_view" alt="" coords="4919,4612,5151,4676">
+<area shape="rect" id="node164" href="tables/invoice_line_stats.html" target="_top" title="invoice_line_stats" alt="" coords="4919,4832,5171,4896">
+<area shape="rect" id="node165" href="tables/name_insurance_join_view.html" target="_top" title="name_insurance_join_view" alt="" coords="372,6152,709,6216">
+<area shape="rect" id="node166" href="tables/report_document.html" target="_top" title="report_document" alt="" coords="4919,7325,5167,7389">
+<area shape="rect" id="node167" href="tables/item_store_join_view.html" target="_top" title="item_store_join_view" alt="" coords="372,5932,655,5996">
+<area shape="rect" id="node168" href="tables/program_event_view.html" target="_top" title="program_event_view" alt="" coords="372,5712,655,5776">
+<area shape="rect" id="node169" href="tables/purchase_order_view.html" target="_top" title="purchase_order_view" alt="" coords="372,5492,657,5556">
+<area shape="rect" id="node170" href="tables/vaccine_course_item_view.html" target="_top" title="vaccine_course_item_view" alt="" coords="372,5272,707,5336">
+<area shape="rect" id="node171" href="tables/vaccination_card.html" target="_top" title="vaccination_card" alt="" coords="4919,7765,5163,7829">
+<area shape="rect" id="node172" href="tables/stock_line_view.html" target="_top" title="stock_line_view" alt="" coords="4552,7765,4783,7829">
+<area shape="rect" id="node173" href="tables/requisitions_in_period.html" target="_top" title="requisitions_in_period" alt="" coords="372,5052,667,5116">
+<area shape="rect" id="node174" href="tables/store_stock_on_hand.html" target="_top" title="store_stock_on_hand" alt="" coords="372,4832,655,4896">
+<area shape="rect" id="node175" href="tables/report_program_event.html" target="_top" title="report_program_event" alt="" coords="372,4612,671,4676">
+<area shape="rect" id="node176" href="tables/master_list_name_join_view.html" target="_top" title="master_list_name_join_view" alt="" coords="4332,6225,4681,6289">
+<area shape="rect" id="node177" href="tables/report_store.html" target="_top" title="report_store" alt="" coords="79,7252,280,7316">
+<area shape="rect" id="node178" href="tables/rnr_form_line_view.html" target="_top" title="rnr_form_line_view" alt="" coords="5,7032,268,7096">
+<area shape="rect" id="node179" href="tables/item_warning_join_view.html" target="_top" title="item_warning_join_view" alt="" coords="372,4392,683,4456">
+<area shape="rect" id="node180" href="tables/latest_asset_log.html" target="_top" title="latest_asset_log" alt="" coords="5,6812,243,6876">
+<area shape="rect" id="node181" href="tables/item_variant_view.html" target="_top" title="item_variant_view" alt="" coords="5,6592,263,6656">
+<area shape="rect" id="node182" href="tables/store_items.html" target="_top" title="store_items" alt="" coords="79,5052,273,5116">
+<area shape="rect" id="node183" href="tables/purchase_order_line_stats.html" target="_top" title="purchase_order_line_stats" alt="" coords="372,4172,707,4236">
+<area shape="rect" id="node184" href="tables/name_tag_join_view.html" target="_top" title="name_tag_join_view" alt="" coords="445,3952,720,4016">
+<area shape="rect" id="node185" href="tables/replenishment.html" target="_top" title="replenishment" alt="" coords="5,6372,228,6436">
+<area shape="rect" id="node186" href="tables/report_encounter.html" target="_top" title="report_encounter" alt="" coords="5,6152,256,6216">
+<area shape="rect" id="node187" href="tables/requisition_view.html" target="_top" title="requisition_view" alt="" coords="5,5932,245,5996">
+<area shape="rect" id="node188" href="tables/item_direction_view.html" target="_top" title="item_direction_view" alt="" coords="445,3732,720,3796">
+<area shape="rect" id="node189" href="tables/requisition_line_view.html" target="_top" title="requisition_line_view" alt="" coords="372,3512,657,3576">
+<area shape="rect" id="node190" href="tables/adjustments.html" target="_top" title="adjustments" alt="" coords="79,5712,281,5776">
+<area shape="rect" id="node191" href="tables/changelog_view.html" target="_top" title="changelog_view" alt="" coords="1796,9483,2032,9576">
+</map>
+                                        <a name='diagram'><img id="compactimpliedDegreeImg" src="diagrams/summary/relationships.implied.compact.png" usemap="#compactImpliedRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="largeimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="largeImpliedRelationshipsDiagram" name="largeImpliedRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/item_store_join.html" target="_top" title="item_store_join" alt="" coords="3289,9419,3604,9689">
+<area shape="rect" id="node33" href="tables/location.html" target="_top" title="location" alt="" coords="2900,9083,3107,9353">
+<area shape="rect" id="node57" href="tables/store.html" target="_top" title="store" alt="" coords="2519,10151,2695,10450">
+<area shape="rect" id="node67" href="tables/item_link.html" target="_top" title="item_link" alt="" coords="2917,8275,3089,8398">
+<area shape="rect" id="node2" href="tables/changelog_p_5000001.html" target="_top" title="changelog_p_5000001" alt="" coords="2458,16358,2757,16686">
+<area shape="rect" id="node47" href="tables/site.html" target="_top" title="site" alt="" coords="2099,14533,2396,15007">
+<area shape="rect" id="node3" href="tables/changelog_p_25000001.html" target="_top" title="changelog_p_25000001" alt="" coords="2452,16703,2763,17031">
+<area shape="rect" id="node4" href="tables/email_queue.html" target="_top" title="email_queue" alt="" coords="505,6719,711,7135">
+<area shape="rect" id="node5" href="tables/changelog_p_15000001.html" target="_top" title="changelog_p_15000001" alt="" coords="2452,12483,2763,12811">
+<area shape="rect" id="node6" href="tables/custom_field.html" target="_top" title="custom_field" alt="" coords="5605,10711,5825,10951">
+<area shape="rect" id="node7" href="tables/stock_relocation.html" target="_top" title="stock_relocation" alt="" coords="4169,9713,4441,10129">
+<area shape="rect" id="node99" href="tables/stock_line.html" target="_top" title="stock_line" alt="" coords="3730,8334,4045,9102">
+<area shape="rect" id="node8" href="tables/context.html" target="_top" title="context" alt="" coords="2169,2335,2326,2458">
+<area shape="rect" id="node9" href="tables/clinician_link.html" target="_top" title="clinician_link" alt="" coords="3343,10281,3551,10403">
+<area shape="rect" id="node121" href="tables/clinician.html" target="_top" title="clinician" alt="" coords="2905,9442,3101,9917">
+<area shape="rect" id="node10" href="tables/custom_field_option.html" target="_top" title="custom_field_option" alt="" coords="5869,10538,6148,10807">
+<area shape="rect" id="node11" href="tables/abbreviation.html" target="_top" title="abbreviation" alt="" coords="1105,11983,1313,12135">
+<area shape="rect" id="node12" href="tables/demographic_indicator.html" target="_top" title="demographic_indicator" alt="" coords="2850,1542,3157,1929">
+<area shape="rect" id="node71" href="tables/demographic.html" target="_top" title="demographic" alt="" coords="2471,1837,2744,1989">
+<area shape="rect" id="node13" href="tables/insurance_provider.html" target="_top" title="insurance_provider" alt="" coords="2852,2353,3155,2563">
+<area shape="rect" id="node14" href="tables/asset_class.html" target="_top" title="asset_class" alt="" coords="1519,12301,1713,12423">
+<area shape="rect" id="node15" href="tables/clinician_store_join.html" target="_top" title="clinician_store_join" alt="" coords="3753,11723,4021,11905">
+<area shape="rect" id="node16" href="tables/program_indicator.html" target="_top" title="program_indicator" alt="" coords="2872,2082,3135,2263">
+<area shape="rect" id="node30" href="tables/program.html" target="_top" title="program" alt="" coords="2497,2922,2717,3191">
+<area shape="rect" id="node17" href="tables/document.html" target="_top" title="document" alt="" coords="2486,2042,2729,2458">
+<area shape="rect" id="node37" href="tables/name_link.html" target="_top" title="name_link" alt="" coords="2157,5526,2338,5649">
+<area shape="rect" id="node98" href="tables/form_schema.html" target="_top" title="form_schema" alt="" coords="2141,1521,2353,1702">
+<area shape="rect" id="node18" href="tables/migration_fragment_log.html" target="_top" title="migration_fragment_log" alt="" coords="6505,9713,6823,9835">
+<area shape="rect" id="node19" href="tables/indicator_line.html" target="_top" title="indicator_line" alt="" coords="3319,2054,3574,2382">
+<area shape="rect" id="node20" href="tables/purchase_order_line.html" target="_top" title="purchase_order_line" alt="" coords="3267,6766,3626,7417">
+<area shape="rect" id="node27" href="tables/purchase_order.html" target="_top" title="purchase_order" alt="" coords="2833,6245,3174,7306">
+<area shape="rect" id="node21" href="tables/sensor.html" target="_top" title="sensor" alt="" coords="3298,10863,3595,11221">
+<area shape="rect" id="node22" href="tables/period_schedule.html" target="_top" title="period_schedule" alt="" coords="2126,2893,2369,3015">
+<area shape="rect" id="node23" href="tables/changelog_p_1.html" target="_top" title="changelog_p_1" alt="" coords="2494,12829,2721,13157">
+<area shape="rect" id="node24" href="tables/user_permission.html" target="_top" title="user_permission" alt="" coords="2882,3402,3125,3613">
+<area shape="rect" id="node25" href="tables/item.html" target="_top" title="item" alt="" coords="2452,7689,2763,8222">
+<area shape="rect" id="node79" href="tables/unit.html" target="_top" title="unit" alt="" coords="2168,7777,2327,7987">
+<area shape="rect" id="node127" href="tables/location_type.html" target="_top" title="location_type" alt="" coords="2137,8121,2358,8302">
+<area shape="rect" id="node26" href="tables/temperature_breach.html" target="_top" title="temperature_breach" alt="" coords="3705,10863,4069,11309">
+<area shape="rect" id="node115" href="tables/currency.html" target="_top" title="currency" alt="" coords="1505,6611,1727,6851">
+<area shape="rect" id="node28" href="tables/item_category_join.html" target="_top" title="item_category_join" alt="" coords="3313,7815,3580,7997">
+<area shape="rect" id="node41" href="tables/category.html" target="_top" title="category" alt="" coords="2893,7682,3113,7893">
+<area shape="rect" id="node29" href="tables/preference.html" target="_top" title="preference" alt="" coords="2908,11827,3099,12009">
+<area shape="rect" id="node59" href="tables/master_list.html" target="_top" title="master_list" alt="" coords="2121,6938,2373,7207">
+<area shape="rect" id="node31" href="tables/stocktake_line.html" target="_top" title="stocktake_line" alt="" coords="4540,3898,4856,4666">
+<area shape="rect" id="node46" href="tables/campaign.html" target="_top" title="campaign" alt="" coords="3337,9191,3557,9402">
+<area shape="rect" id="node68" href="tables/reason_option.html" target="_top" title="reason_option" alt="" coords="2893,5485,3114,5666">
+<area shape="rect" id="node92" href="tables/item_variant.html" target="_top" title="item_variant" alt="" coords="3320,7434,3573,7762">
+<area shape="rect" id="node103" href="tables/stocktake.html" target="_top" title="stocktake" alt="" coords="4169,2641,4441,3203">
+<area shape="rect" id="node32" href="tables/changelog_p_30000001.html" target="_top" title="changelog_p_30000001" alt="" coords="2452,13174,2763,13502">
+<area shape="rect" id="node34" href="tables/store_preference.html" target="_top" title="store_preference" alt="" coords="5205,9714,5889,10335">
+<area shape="rect" id="node35" href="tables/rnr_form.html" target="_top" title="rnr_form" alt="" coords="2879,3666,3128,4053">
+<area shape="rect" id="node93" href="tables/period.html" target="_top" title="period" alt="" coords="2490,3473,2725,3683">
+<area shape="rect" id="node36" href="tables/indicator_column.html" target="_top" title="indicator_column" alt="" coords="3319,2399,3574,2669">
+<area shape="rect" id="node90" href="tables/name.html" target="_top" title="name" alt="" coords="1771,5555,2055,6734">
+<area shape="rect" id="node38" href="tables/changelog_p_20000001.html" target="_top" title="changelog_p_20000001" alt="" coords="2452,13519,2763,13847">
+<area shape="rect" id="node39" href="tables/sync_buffer_archive.html" target="_top" title="sync_buffer_archive" alt="" coords="2440,13865,2775,14457">
+<area shape="rect" id="node40" href="tables/invoice_line.html" target="_top" title="invoice_line" alt="" coords="4113,7101,4496,8250">
+<area shape="rect" id="node88" href="tables/invoice.html" target="_top" title="invoice" alt="" coords="3709,2963,4065,4289">
+<area shape="rect" id="node109" href="tables/vvm_status.html" target="_top" title="vvm_status" alt="" coords="3350,9706,3543,9975">
+<area shape="rect" id="node42" href="tables/demographic_projection.html" target="_top" title="demographic_projection" alt="" coords="6305,11466,6624,11735">
+<area shape="rect" id="node43" href="tables/program_requisition_order_type.html" target="_top" title="program_requisition_order_type" alt="" coords="3249,1314,3645,1613">
+<area shape="rect" id="node102" href="tables/program_requisition_settings.html" target="_top" title="program_requisition_settings" alt="" coords="2819,1343,3188,1525">
+<area shape="rect" id="node44" href="tables/system_log.html" target="_top" title="system_log" alt="" coords="2511,14474,2703,14714">
+<area shape="rect" id="node45" href="tables/location_movement.html" target="_top" title="location_movement" alt="" coords="4168,10146,4441,10386">
+<area shape="rect" id="node48" href="tables/frontend_plugin.html" target="_top" title="frontend_plugin" alt="" coords="105,6695,344,6935">
+<area shape="rect" id="node49" href="tables/vaccine_course_item.html" target="_top" title="vaccine_course_item" alt="" coords="3305,4598,3589,4779">
+<area shape="rect" id="node119" href="tables/vaccine_course.html" target="_top" title="vaccine_course" alt="" coords="2858,2617,3149,2945">
+<area shape="rect" id="node50" href="tables/asset_internal_location.html" target="_top" title="asset_internal_location" alt="" coords="3293,12170,3601,12322">
+<area shape="rect" id="node51" href="tables/asset.html" target="_top" title="asset" alt="" coords="2861,12170,3146,12821">
+<area shape="rect" id="node76" href="tables/asset_category.html" target="_top" title="asset_category" alt="" coords="1797,12242,2028,12394">
+<area shape="rect" id="node113" href="tables/asset_catalogue_item.html" target="_top" title="asset_catalogue_item" alt="" coords="2461,12001,2754,12358">
+<area shape="rect" id="node125" href="tables/asset_catalogue_type.html" target="_top" title="asset_catalogue_type" alt="" coords="2101,12201,2394,12353">
+<area shape="rect" id="node52" href="tables/vaccine_course_store_config.html" target="_top" title="vaccine_course_store_config" alt="" coords="3267,4370,3626,4581">
+<area shape="rect" id="node53" href="tables/temperature_breach_config.html" target="_top" title="temperature_breach_config" alt="" coords="2827,10961,3179,11259">
+<area shape="rect" id="node54" href="tables/vaccine_course_dose.html" target="_top" title="vaccine_course_dose" alt="" coords="3304,2686,3589,2985">
+<area shape="rect" id="node55" href="tables/shipping_method.html" target="_top" title="shipping_method" alt="" coords="3321,4057,3572,4209">
+<area shape="rect" id="node56" href="tables/rnr_form_line.html" target="_top" title="rnr_form_line" alt="" coords="3232,4797,3661,5594">
+<area shape="rect" id="node58" href="tables/name_property.html" target="_top" title="name_property" alt="" coords="6245,10095,6476,10247">
+<area shape="rect" id="node82" href="tables/property.html" target="_top" title="property" alt="" coords="6005,10125,6201,10335">
+<area shape="rect" id="node60" href="tables/contact.html" target="_top" title="contact" alt="" coords="2521,3701,2694,4175">
+<area shape="rect" id="node61" href="tables/sync_log.html" target="_top" title="sync_log" alt="" coords="1005,7733,1380,8735">
+<area shape="rect" id="node62" href="tables/contact_trace.html" target="_top" title="contact_trace" alt="" coords="2867,4142,3139,4587">
+<area shape="rect" id="node63" href="tables/barcode.html" target="_top" title="barcode" alt="" coords="2877,7395,3130,7665">
+<area shape="rect" id="node64" href="tables/ancillary_item.html" target="_top" title="ancillary_item" alt="" coords="3319,8285,3575,8525">
+<area shape="rect" id="node65" href="tables/packaging_variant.html" target="_top" title="packaging_variant" alt="" coords="3756,7411,4019,7681">
+<area shape="rect" id="node66" href="tables/requisition.html" target="_top" title="requisition" alt="" coords="2837,4605,3169,5431">
+<area shape="rect" id="node69" href="tables/name_insurance_join.html" target="_top" title="name_insurance_join" alt="" coords="3303,3266,3590,3682">
+<area shape="rect" id="node70" href="tables/master_list_line.html" target="_top" title="master_list_line" alt="" coords="3329,8014,3565,8195">
+<area shape="rect" id="node72" href="tables/asset_property.html" target="_top" title="asset_property" alt="" coords="205,8437,435,8735">
+<area shape="rect" id="node73" href="tables/user_account.html" target="_top" title="user_account" alt="" coords="2483,17049,2731,17435">
+<area shape="rect" id="node74" href="tables/custom_field_scope.html" target="_top" title="custom_field_scope" alt="" coords="5873,10825,6145,11035">
+<area shape="rect" id="node75" href="tables/diagnosis.html" target="_top" title="diagnosis" alt="" coords="3359,3002,3535,3213">
+<area shape="rect" id="node77" href="tables/help_document.html" target="_top" title="help_document" alt="" coords="105,11754,337,11935">
+<area shape="rect" id="node78" href="tables/number.html" target="_top" title="number" alt="" coords="2924,11277,3083,11458">
+<area shape="rect" id="node80" href="tables/asset_log.html" target="_top" title="asset_log" alt="" coords="3337,12530,3557,12858">
+<area shape="rect" id="node94" href="tables/asset_log_reason.html" target="_top" title="asset_log_reason" alt="" coords="2879,12838,3128,13049">
+<area shape="rect" id="node81" href="tables/contact_form.html" target="_top" title="contact_form" alt="" coords="2893,11511,3113,11810">
+<area shape="rect" id="node83" href="tables/bundled_item.html" target="_top" title="bundled_item" alt="" coords="3741,7183,4033,7394">
+<area shape="rect" id="node84" href="tables/key_value_store.html" target="_top" title="key_value_store" alt="" coords="6505,10995,6744,11235">
+<area shape="rect" id="node85" href="tables/name_tag.html" target="_top" title="name_tag" alt="" coords="2518,1661,2697,1783">
+<area shape="rect" id="node86" href="tables/user_store_join.html" target="_top" title="user_store_join" alt="" coords="2888,15041,3119,15222">
+<area shape="rect" id="node87" href="tables/sync_file_reference.html" target="_top" title="sync_file_reference" alt="" coords="605,10131,876,10635">
+<area shape="rect" id="node89" href="tables/warning.html" target="_top" title="warning" alt="" coords="2915,8770,3091,8922">
+<area shape="rect" id="node91" href="tables/requisition_line.html" target="_top" title="requisition_line" alt="" coords="3271,5827,3623,6713">
+<area shape="rect" id="node95" href="tables/program_enrolment.html" target="_top" title="program_enrolment" alt="" coords="2865,5719,3141,6047">
+<area shape="rect" id="node96" href="tables/plugin_data.html" target="_top" title="plugin_data" alt="" coords="2894,10638,3113,10907">
+<area shape="rect" id="node97" href="tables/activity_log.html" target="_top" title="activity_log" alt="" coords="2906,9934,3101,10233">
+<area shape="rect" id="node100" href="tables/indicator_value.html" target="_top" title="indicator_value" alt="" coords="3750,2038,4025,2307">
+<area shape="rect" id="node101" href="tables/sync_request.html" target="_top" title="sync_request" alt="" coords="105,9166,329,9435">
+<area shape="rect" id="node104" href="tables/__diesel_schema_migrations.html" target="_top" title="__diesel_schema_migrations" alt="" coords="5,8913,361,9035">
+<area shape="rect" id="node105" href="tables/document_registry.html" target="_top" title="document_registry" alt="" coords="2474,1374,2741,1643">
+<area shape="rect" id="node106" href="tables/item_warning_join.html" target="_top" title="item_warning_join" alt="" coords="3317,8741,3577,8922">
+<area shape="rect" id="node107" href="tables/temperature_log.html" target="_top" title="temperature_log" alt="" coords="4167,10707,4442,10977">
+<area shape="rect" id="node108" href="tables/changelog_p_10000001.html" target="_top" title="changelog_p_10000001" alt="" coords="2452,14731,2763,15059">
+<area shape="rect" id="node110" href="tables/vvm_status_log.html" target="_top" title="vvm_status_log" alt="" coords="4581,9171,4815,9470">
+<area shape="rect" id="node111" href="tables/item_direction.html" target="_top" title="item_direction" alt="" coords="3335,8542,3559,8723">
+<area shape="rect" id="node112" href="tables/sync_log_v7.html" target="_top" title="sync_log_v7" alt="" coords="5705,7514,6135,8135">
+<area shape="rect" id="node114" href="tables/name_tag_join.html" target="_top" title="name_tag_join" alt="" coords="2892,1174,3115,1326">
+<area shape="rect" id="node116" href="tables/sync_buffer_pending.html" target="_top" title="sync_buffer_pending" alt="" coords="2440,15077,2775,15669">
+<area shape="rect" id="node117" href="tables/encounter.html" target="_top" title="encounter" alt="" coords="2893,2998,3113,3385">
+<area shape="rect" id="node118" href="tables/master_list_name_join.html" target="_top" title="master_list_name_join" alt="" coords="2458,7055,2757,7207">
+<area shape="rect" id="node120" href="tables/vaccination.html" target="_top" title="vaccination" alt="" coords="3748,2325,4027,2946">
+<area shape="rect" id="node122" href="tables/sync_message.html" target="_top" title="sync_message" alt="" coords="2892,10250,3115,10549">
+<area shape="rect" id="node123" href="tables/report.html" target="_top" title="report" alt="" coords="2475,941,2740,1357">
+<area shape="rect" id="node124" href="tables/program_event.html" target="_top" title="program_event" alt="" coords="2477,2475,2737,2833">
+<area shape="rect" id="node126" href="tables/backend_plugin.html" target="_top" title="backend_plugin" alt="" coords="705,5195,941,5435">
+<area shape="rect" id="node128" href="tables/name_store_join.html" target="_top" title="name_store_join" alt="" coords="2883,7910,3124,8150">
+<area shape="rect" id="node129" href="tables/printer.html" target="_top" title="printer" alt="" coords="5705,9295,5873,9535">
+<area shape="rect" id="node130" href="tables/name_store_join_view.html" target="_top" title="name_store_join_view" alt="" coords="505,11590,797,11835">
+<area shape="rect" id="node131" href="tables/rnr_form_view.html" target="_top" title="rnr_form_view" alt="" coords="6205,5443,6455,5835">
+<area shape="rect" id="node132" href="tables/stocktake_line_view.html" target="_top" title="stocktake_line_view" alt="" coords="1005,10203,1321,11035">
+<area shape="rect" id="node133" href="tables/contact_view.html" target="_top" title="contact_view" alt="" coords="605,9455,813,9935">
+<area shape="rect" id="node134" href="tables/vaccination_course.html" target="_top" title="vaccination_course" alt="" coords="5705,8333,5984,9135">
+<area shape="rect" id="node135" href="tables/inventory_adjustment_stock_movement.html" target="_top" title="inventory_adjustment_stock_movement" alt="" coords="5905,11149,6373,11335">
+<area shape="rect" id="node136" href="tables/ancillary_item_view.html" target="_top" title="ancillary_item_view" alt="" coords="1105,5161,1376,5435">
+<area shape="rect" id="node137" href="tables/report_program_enrolment.html" target="_top" title="report_program_enrolment" alt="" coords="205,5390,549,5635">
+<area shape="rect" id="node138" href="tables/purchase_order_line_view.html" target="_top" title="purchase_order_line_view" alt="" coords="6005,9250,6364,9935">
+<area shape="rect" id="node139" href="tables/encounter_view.html" target="_top" title="encounter_view" alt="" coords="6205,6043,6439,6435">
+<area shape="rect" id="node140" href="tables/item_ledger.html" target="_top" title="item_ledger" alt="" coords="5205,10521,5448,11235">
+<area shape="rect" id="node141" href="tables/invoice_stats.html" target="_top" title="invoice_stats" alt="" coords="1005,8931,1369,9235">
+<area shape="rect" id="node142" href="tables/contact_trace_name_link_view.html" target="_top" title="contact_trace_name_link_view" alt="" coords="6105,8314,6479,8735">
+<area shape="rect" id="node143" href="tables/outbound_shipment_stock_movement.html" target="_top" title="outbound_shipment_stock_movement" alt="" coords="6105,8849,6553,9035">
+<area shape="rect" id="node144" href="tables/inbound_shipment_stock_movement.html" target="_top" title="inbound_shipment_stock_movement" alt="" coords="5305,11349,5739,11535">
+<area shape="rect" id="node145" href="tables/stock_line_ledger.html" target="_top" title="stock_line_ledger" alt="" coords="605,7962,855,8735">
+<area shape="rect" id="node146" href="tables/master_list_line_view.html" target="_top" title="master_list_line_view" alt="" coords="5905,11449,6192,11635">
+<area shape="rect" id="node147" href="tables/latest_document.html" target="_top" title="latest_document" alt="" coords="6205,6614,6448,7035">
+<area shape="rect" id="node148" href="tables/stock_line_ledger_discrepancy.html" target="_top" title="stock_line_ledger_discrepancy" alt="" coords="605,11966,980,12035">
+<area shape="rect" id="node149" href="tables/stock_movement.html" target="_top" title="stock_movement" alt="" coords="605,5821,851,6535">
+<area shape="rect" id="node150" href="tables/invoice_view.html" target="_top" title="invoice_view" alt="" coords="5205,5475,5561,6835">
+<area shape="rect" id="node151" href="tables/purchase_order_stats.html" target="_top" title="purchase_order_stats" alt="" coords="6605,5307,6927,5435">
+<area shape="rect" id="node152" href="tables/indicator_value_view.html" target="_top" title="indicator_value_view" alt="" coords="205,11161,489,11435">
+<area shape="rect" id="node153" href="tables/stock_on_hand.html" target="_top" title="stock_on_hand" alt="" coords="205,10819,493,11035">
+<area shape="rect" id="node154" href="tables/barcode_view.html" target="_top" title="barcode_view" alt="" coords="6605,5561,6859,5835">
+<area shape="rect" id="node155" href="tables/item_category_join_view.html" target="_top" title="item_category_join_view" alt="" coords="1005,11649,1324,11835">
+<area shape="rect" id="node156" href="tables/consumption.html" target="_top" title="consumption" alt="" coords="6605,5961,6819,6235">
+<area shape="rect" id="node157" href="tables/program_enrolment_view.html" target="_top" title="program_enrolment_view" alt="" coords="1005,11202,1333,11535">
+<area shape="rect" id="node158" href="tables/report_patient.html" target="_top" title="report_patient" alt="" coords="205,6173,427,6535">
+<area shape="rect" id="node159" href="tables/store_view.html" target="_top" title="store_view" alt="" coords="2515,15686,2700,15990">
+<area shape="rect" id="node160" href="tables/vaccination_view.html" target="_top" title="vaccination_view" alt="" coords="605,10750,884,11435">
+<area shape="rect" id="node161" href="tables/invoice_line_stock_movement.html" target="_top" title="invoice_line_stock_movement" alt="" coords="1005,9350,1388,10035">
+<area shape="rect" id="node162" href="tables/invoice_line_view.html" target="_top" title="invoice_line_view" alt="" coords="5205,7022,5588,8235">
+<area shape="rect" id="node163" href="tables/document_view.html" target="_top" title="document_view" alt="" coords="6305,7214,6548,7635">
+<area shape="rect" id="node164" href="tables/invoice_line_stats.html" target="_top" title="invoice_line_stats" alt="" coords="105,11566,357,11635">
+<area shape="rect" id="node165" href="tables/name_insurance_join_view.html" target="_top" title="name_insurance_join_view" alt="" coords="505,8914,843,9335">
+<area shape="rect" id="node166" href="tables/report_document.html" target="_top" title="report_document" alt="" coords="5905,11749,6153,11935">
+<area shape="rect" id="node167" href="tables/item_store_join_view.html" target="_top" title="item_store_join_view" alt="" coords="105,10361,420,10635">
+<area shape="rect" id="node168" href="tables/program_event_view.html" target="_top" title="program_event_view" alt="" coords="6305,7773,6588,8135">
+<area shape="rect" id="node169" href="tables/purchase_order_view.html" target="_top" title="purchase_order_view" alt="" coords="5205,8439,5547,9535">
+<area shape="rect" id="node170" href="tables/vaccine_course_item_view.html" target="_top" title="vaccine_course_item_view" alt="" coords="5405,11649,5740,11835">
+<area shape="rect" id="node171" href="tables/vaccination_card.html" target="_top" title="vaccination_card" alt="" coords="505,7297,784,7835">
+<area shape="rect" id="node172" href="tables/stock_line_view.html" target="_top" title="stock_line_view" alt="" coords="5705,5474,6020,6335">
+<area shape="rect" id="node173" href="tables/requisitions_in_period.html" target="_top" title="requisitions_in_period" alt="" coords="105,9961,400,10235">
+<area shape="rect" id="node174" href="tables/store_stock_on_hand.html" target="_top" title="store_stock_on_hand" alt="" coords="205,9619,493,9835">
+<area shape="rect" id="node175" href="tables/report_program_event.html" target="_top" title="report_program_event" alt="" coords="6305,10531,6604,10835">
+<area shape="rect" id="node176" href="tables/master_list_name_join_view.html" target="_top" title="master_list_name_join_view" alt="" coords="6605,6378,6955,6535">
+<area shape="rect" id="node177" href="tables/report_store.html" target="_top" title="report_store" alt="" coords="6605,6649,6807,6835">
+<area shape="rect" id="node178" href="tables/rnr_form_line_view.html" target="_top" title="rnr_form_line_view" alt="" coords="905,6733,1335,7535">
+<area shape="rect" id="node179" href="tables/item_warning_join_view.html" target="_top" title="item_warning_join_view" alt="" coords="105,8049,416,8235">
+<area shape="rect" id="node180" href="tables/latest_asset_log.html" target="_top" title="latest_asset_log" alt="" coords="105,7631,343,7935">
+<area shape="rect" id="node181" href="tables/item_variant_view.html" target="_top" title="item_variant_view" alt="" coords="105,7073,363,7435">
+<area shape="rect" id="node182" href="tables/store_items.html" target="_top" title="store_items" alt="" coords="105,5849,420,6035">
+<area shape="rect" id="node183" href="tables/purchase_order_line_stats.html" target="_top" title="purchase_order_line_stats" alt="" coords="6605,8278,6940,8435">
+<area shape="rect" id="node184" href="tables/name_tag_join_view.html" target="_top" title="name_tag_join_view" alt="" coords="5205,5178,5480,5335">
+<area shape="rect" id="node185" href="tables/replenishment.html" target="_top" title="replenishment" alt="" coords="6605,8549,6828,8735">
+<area shape="rect" id="node186" href="tables/report_encounter.html" target="_top" title="report_encounter" alt="" coords="6505,9231,6756,9535">
+<area shape="rect" id="node187" href="tables/requisition_view.html" target="_top" title="requisition_view" alt="" coords="5705,6474,6037,7335">
+<area shape="rect" id="node188" href="tables/item_direction_view.html" target="_top" title="item_direction_view" alt="" coords="6605,9949,6880,10135">
+<area shape="rect" id="node189" href="tables/requisition_line_view.html" target="_top" title="requisition_line_view" alt="" coords="1005,5645,1357,6535">
+<area shape="rect" id="node190" href="tables/adjustments.html" target="_top" title="adjustments" alt="" coords="6605,11849,6808,12035">
+<area shape="rect" id="node191" href="tables/changelog_view.html" target="_top" title="changelog_view" alt="" coords="2489,16007,2725,16341">
+</map>
+                                        <a name='diagram'><img id="largeimpliedDegreeImg" src="diagrams/summary/relationships.implied.large.png" usemap="#largeImpliedRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 7.0.2</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="bower/pdfmake/pdfmake.min.js"></script>
+        <script src="bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="bower/codemirror/codemirror.js"></script>
+        <script src="bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="relationships.js"></script>
+        <script src="schemaSpy.js"></script>
+    </body>
+</html>
